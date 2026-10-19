@@ -33,13 +33,13 @@ Settings → Pages → Deploy from a branch에서 기본 브랜치와 / (root)�
 
 ## 클로네 인물 설정집
 
-config.js의 characterProfile에서 항목을 편집합니다. 각 배열에 { label: '항목', value: '내용' }을 추가하면 clone.html에 표시됩니다.
+clone.html은 연핑크 위키 문서입니다. 인물 설정은 JavaScript 없이도 표시되는 HTML 본문으로 관리합니다. wiki.css는 이 문서에만 적용되며 홈의 블랙 테마는 유지합니다.
 
-- identity: 기본 정보
-- appearance: 외형
-- personality: 성격
-- background: 배경
-- relationships: 관계
-- notes: 기타 설정
+2026-10-20 제공된 인물 설정 자료집에서 프로필, 외형, 취향, 학력, 업무와 관계를 선별했습니다. 상세 과거 사건, 설정 충돌 검토, 창작 지침, 프롬프트는 수록하지 않았습니다. 후일담과 외전은 별도 접기 항목입니다. 원본 PDF는 저장소에 포함하지 않습니다.
 
-characterProfileNote는 설정집 머리말입니다. 미제공 설정은 창작하지 않았으며 현재 이름과 오리지널 캐릭터라는 구분만 등록했습니다. 기존 characterImageUrl 설정은 그대로 유지됩니다.
+이미지는 기존과 같이 config.js의 characterImageUrl에 raw HTTPS URL을 입력하면 표시됩니다.
+
+대학 영문 명칭 확인:
+- University of Prishtina: https://uni-pr.edu/en
+- Sorbonne University: https://www.sorbonne-universite.fr/en/university
+- University College London (UCL): https://www.ucl.ac.uk/
