@@ -5,7 +5,7 @@ window.SITE_CONFIG = {
   characterImageAlt: '오리지널 캐릭터 클로네',
   characterImagePosition: 'center',
   // 설정 자료를 받은 뒤 각 항목에 { label: '항목', value: '내용' } 형태로 추가합니다.
-  characterProfileNote: '설정 자료 준비 중입니다.',
+  characterProfileNote: '이 문서는 작성 중입니다. 확인된 설정부터 추가합니다.',
   characterProfile: {
     identity: [{ label: '이름', value: '클로네 / Cloné' }, { label: '구분', value: '오리지널 캐릭터' }],
     appearance: [],
