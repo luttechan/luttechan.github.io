@@ -1,39 +1,8 @@
 <!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f2e9">
-  <meta name="description" content="Lutté의 개발 기록. KanaShift, Anki 학습 도구, 암호화 실험과 클로네.">
-  <title>Lutté — Code, language & little things.</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <script src="config.js" defer></script><script src="app.js" defer></script>
-</head>
-<body>
-  <a class="skip" href="#projects">프로젝트로 바로가기</a>
-  <div class="progress" aria-hidden="true"></div>
-  <header class="header"><a class="logo" href="#home" aria-label="Lutté 홈">lutté<span>✳</span></a><nav aria-label="주요 메뉴"><a href="#projects">Projects</a><a href="#about">About</a><a href="#clone">Cloné</a></nav><a class="github" href="https://github.com/luttechan" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a></header>
-  <main id="home">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="eyebrow"><span class="dot"></span> LUTTÉ / INDEPENDENT DEVELOPER</div>
-      <h1 id="hero-title">Small tools.<br><span class="serif">Personal</span> <span class="outline">worlds.</span></h1>
-      <div class="hero-bottom"><p>언어를 오가고, 배움을 정리하고.<br>일상의 작은 불편을 코드로 풀어갑니다.</p><a class="round-link" href="#projects"><span>프로젝트 둘러보기</span><span class="circle">↘</span></a></div>
-      <div class="orbit" aria-hidden="true"><span>作</span><span>BUILD · LEARN · REPEAT</span></div>
-      <div class="hero-foot"><span>CODE / LANGUAGE / CHARACTER</span><span>SCROLL TO EXPLORE ↓</span></div>
-    </section>
-    <div class="ticker" aria-hidden="true"><div>PYTHON ✳ LANGUAGE ✳ LITTLE UTILITIES ✳ ORIGINAL CHARACTER ✳ OPEN SOURCE ✳ PYTHON ✳ LANGUAGE ✳ LITTLE UTILITIES ✳ ORIGINAL CHARACTER ✳ OPEN SOURCE ✳ </div></div>
-    <section id="projects" class="section projects">
-      <div class="section-head reveal"><div><span class="eyebrow">01 / THE COLLECTION</span><h2>Things I've <em>built.</em></h2></div><p>작은 아이디어에서 시작한 도구들.<br>GitHub의 모든 공개 저장소를 모았습니다.</p></div>
-      <div class="toolbar"><div class="filters" role="group" aria-label="프로젝트 분류"><button class="active" data-filter="all" aria-pressed="true">전체 <span id="total">5</span></button><button data-filter="language" aria-pressed="false">언어·학습</button><button data-filter="utility" aria-pressed="false">유틸리티</button><button data-filter="web" aria-pressed="false">웹</button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="프로젝트 검색" aria-label="프로젝트 검색"></label></div>
-      <p id="result-status" class="sr-only" role="status"></p><div id="project-grid" class="project-grid"></div>
-      <noscript><p>프로젝트 목록은 <a href="https://github.com/luttechan?tab=repositories">GitHub 저장소</a>에서 볼 수 있습니다.</p></noscript>
-      <div class="collection-foot"><span id="sync-status">공개 프로젝트 아카이브</span><a href="https://github.com/luttechan?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub에서 전체 보기 ↗</a></div>
-    </section>
-    <section id="about" class="section about"><div class="about-label reveal"><span class="eyebrow">02 / BEHIND THE CODE</span><h2>Hello,<br>I'm <em>Lutté.</em></h2><a href="https://github.com/luttechan" class="text-link">@luttechan ↗</a></div><div class="about-copy reveal"><p class="large-copy">매일 쓰고 싶은 도구를,<br>직접 만드는 즐거움.</p><p>다국어 입력을 더 편하게 만드는 KanaShift부터 Anki 학습을 돕는 도구까지. 언어와 학습, 로컬 유틸리티를 중심으로 프로젝트를 만들고 GitHub에 기록합니다.</p><div class="about-tags"><span>Python</span><span>Language learning</span><span>Windows utilities</span></div><div class="about-note"><span>ALSO IN MY WORLD</span><p>코드 밖에는, 나의 오리지널 캐릭터 클로네가 있습니다. <a href="#clone" aria-label="클로네 소개로 이동">↘</a></p></div></div></section>
-    <section id="clone" class="section character"><div class="character-art reveal" id="character-art"><div class="character-placeholder" id="character-placeholder"><span class="eyebrow">ORIGINAL CHARACTER / 01</span><span class="character-monogram" aria-hidden="true">C<span>✳</span></span><span class="placeholder-caption">CLONÉ<br><small>아직 비워 둔 한 장면.</small></span></div><img id="character-image" alt="오리지널 캐릭터 클로네" hidden loading="lazy"></div><div class="character-copy reveal"><span class="eyebrow">03 / A PERSONAL WORLD</span><h2>Meet<br><em>Cloné.</em></h2><p class="character-korean">클로네</p><p>나의 오리지널 캐릭터.<br>이곳에 클로네의 모습을 조금씩 담아갑니다.</p><span class="character-status" id="character-status">ILLUSTRATION COMING LATER</span></div></section>
-    <section class="contact section reveal"><span class="eyebrow">KEEP IN TOUCH</span><h2>See you on<br><a href="https://github.com/luttechan" target="_blank" rel="noopener noreferrer"><em>GitHub.</em> ↗</a></h2><p>새로운 코드와 다음 아이디어는 이곳에.</p></section>
-  </main>
-  <footer><a class="logo" href="#home">lutté<span>✳</span></a><span>© <span id="year">2026</span> Lutté · Made with curiosity.</span><a href="#home">BACK TO TOP ↑</a></footer>
-</body>
-</html>
-
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0b0c"><meta name="description" content="Lutté의 개발 프로젝트. KanaShift, Anki 학습 도구, 로컬 유틸리티."><title>Lutté — Projects</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script><script src="motion.js" defer></script></head><body id="top"><a class="skip" href="#content">본문으로</a><div class="progress" aria-hidden="true"></div><header class="header"><a class="logo" href="index.html">lutté<span> /</span></a><nav aria-label="주요 메뉴"><a href="index.html#projects">Projects</a><a href="clone.html">Cloné</a><a href="https://github.com/luttechan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></header><main id="content">
+<section class="hero"><div class="eyebrow">LUTTÉ / DEVELOPER</div><h1>쓰려고<br><span>만듭니다.</span></h1><div class="hero-bottom"><p>입력 언어 전환, Anki, 로컬 도구.<br>직접 쓰면서 고치고 있습니다.</p><a class="inline-link" href="#projects">프로젝트 보기 <span>↓</span></a></div><div class="hero-mark" aria-hidden="true">l.</div></section>
+<section id="projects" class="section"><div class="section-head reveal"><h2>Projects<span class="heading-dot">.</span></h2><span class="eyebrow">PUBLIC REPOSITORIES</span></div>
+<div class="toolbar"><div class="filters" role="group" aria-label="프로젝트 분류"><button class="active" data-filter="all" aria-pressed="true">전체 <span id="total">5</span></button><button data-filter="language" aria-pressed="false">언어·학습</button><button data-filter="utility" aria-pressed="false">유틸리티</button><button data-filter="web" aria-pressed="false">웹</button></div><label class="search"><input id="search" type="search" placeholder="검색" aria-label="프로젝트 검색"><span aria-hidden="true">⌕</span></label></div><p id="result-status" class="sr-only" role="status"></p><div id="project-grid" class="project-grid"></div><noscript><a href="https://github.com/luttechan?tab=repositories">GitHub에서 프로젝트 보기</a></noscript><div class="collection-foot"><span id="sync-status">공개 저장소</span><a href="https://github.com/luttechan?tab=repositories">전체 저장소 ↗</a></div></section>
+<section class="profile section reveal"><h2>Lutté</h2><div><p>Python으로 언어·학습 도구를 만듭니다.</p><a href="https://github.com/luttechan">@luttechan ↗</a></div></section>
+<a class="character-link reveal" href="clone.html"><div><span class="eyebrow">ORIGINAL CHARACTER</span><h2>Cloné</h2><p>클로네 · 인물 설정집</p></div><span class="link-arrow" aria-hidden="true">↗</span></a>
+</main><footer><span>© <span id="year">2026</span> Lutté</span><a href="#top">위로 ↑</a></footer></body></html>

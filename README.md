@@ -2,7 +2,7 @@
 
 https://luttechan.github.io/
 
-반응형 정적 개발자 포트폴리오. 빌드나 패키지 설치 없이 GitHub Pages에서 동작합니다.
+블랙 테마의 반응형 정적 개발자 포트폴리오. 홈은 index.html, 클로네 소개와 인물 설정집은 clone.html입니다. 빌드나 패키지 설치 없이 GitHub Pages에서 동작합니다.
 
 ## 클로네 이미지 추가
 
@@ -24,9 +24,22 @@ Settings → Pages → Deploy from a branch에서 기본 브랜치와 / (root)�
 
 ## 접근성
 
-모바일 단일 열, 데스크톱 그리드, 키보드 포커스, 건너뛰기 링크, 검색 결과 알림을 지원합니다. OS의 동작 줄이기 설정에서는 애니메이션을 끕니다. Google Fonts 로딩 실패 시 시스템 글꼴을 사용합니다.
+반응형 프로젝트 목록, 키보드 포커스, 건너뛰기 링크, 검색 결과 알림을 지원합니다. 포인터에 반응하는 조명과 호버 효과, 스크롤 등장 효과를 제공합니다. OS의 동작 줄이기 설정에서는 애니메이션을 끕니다. 외부 글꼴 요청 없이 시스템 글꼴을 사용합니다.
 
 ## 디자인 참고
 
 - https://www.figma.com/resource-library/web-design-trends/
 - https://www.squarespace.com/blog/web-design-trends
+
+## 클로네 인물 설정집
+
+config.js의 characterProfile에서 항목을 편집합니다. 각 배열에 { label: '항목', value: '내용' }을 추가하면 clone.html에 표시됩니다.
+
+- identity: 기본 정보
+- appearance: 외형
+- personality: 성격
+- background: 배경
+- relationships: 관계
+- notes: 기타 설정
+
+characterProfileNote는 설정집 머리말입니다. 미제공 설정은 창작하지 않았으며 현재 이름과 오리지널 캐릭터라는 구분만 등록했습니다. 기존 characterImageUrl 설정은 그대로 유지됩니다.

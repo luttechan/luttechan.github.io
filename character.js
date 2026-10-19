@@ -1,0 +1,8 @@
+ 'use strict';
+const config=window.SITE_CONFIG||{};
+const image=document.querySelector('#character-image');
+try{const url=new URL(config.characterImageUrl);if(url.protocol==='https:'){image.alt=config.characterImageAlt||'클로네';image.style.objectPosition=config.characterImagePosition||'center';image.addEventListener('load',()=>{image.hidden=false;document.querySelector('#character-placeholder').hidden=true;});image.addEventListener('error',()=>{document.querySelector('#character-status').textContent='이미지를 불러오지 못했습니다.';});image.src=url.href;}}catch{/* No image configured yet. */}
+const details=config.characterProfile||{};
+const sections=[['identity','기본 정보'],['appearance','외형'],['personality','성격'],['background','배경'],['relationships','관계'],['notes','기타 설정']];
+if(config.characterProfileNote)document.querySelector('#dossier-note').textContent=config.characterProfileNote;
+sections.forEach(([id,title],index)=>{const section=document.createElement('section');section.id=id;section.className='dossier-section reveal';const heading=document.createElement('h3');heading.textContent=`${String(index+1).padStart(2,'0')} / ${title}`;section.append(heading);const entries=details[id];if(Array.isArray(entries)&&entries.length){const list=document.createElement('dl');entries.forEach(entry=>{const term=document.createElement('dt');term.textContent=entry.label||'';const value=document.createElement('dd');value.textContent=entry.value||'미등록';list.append(term,value);});section.append(list);}else{const empty=document.createElement('p');empty.className='unfilled';empty.textContent='아직 등록된 설정이 없습니다.';section.append(empty);}document.querySelector('#dossier-sections').append(section);});
