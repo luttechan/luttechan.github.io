@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Anki-Add-on-Deck-Guard",
+    "description": "It prevents notes from being added to the wrong deck.",
+    "html_url": "https://github.com/luttechan/Anki-Add-on-Deck-Guard",
+    "homepage": "",
+    "language": "Python",
+    "fork": false,
+    "archived": false
+  },
+  {
+    "name": "ANV-Core",
+    "description": "A lightweight edition of AnkiVoice Extended that focuses on deck conversion, vocabulary processing, APKG analysis, quizzes, and local audio management.",
+    "html_url": "https://github.com/luttechan/ANV-Core",
+    "homepage": "",
+    "language": "Python",
+    "fork": false,
+    "archived": false
+  },
+  {
+    "name": "Crypto-Tool",
+    "description": "This software was created for educational purposes to study cryptography and local file management.",
+    "html_url": "https://github.com/luttechan/Crypto-Tool",
+    "homepage": "",
+    "language": "Python",
+    "fork": false,
+    "archived": false
+  },
+  {
+    "name": "KanaShift",
+    "description": "A lightweight multilingual input utility designed to make switching among the languages.",
+    "html_url": "https://github.com/luttechan/KanaShift",
+    "homepage": null,
+    "language": "Python",
+    "fork": false,
+    "archived": false
+  },
+  {
+    "name": "luttechan.github.io",
+    "description": null,
+    "html_url": "https://github.com/luttechan/luttechan.github.io",
+    "homepage": "https://luttechan.github.io/",
+    "language": null,
+    "fork": false,
+    "archived": false
+  }
+]
