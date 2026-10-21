@@ -3,7 +3,7 @@ const curated = {
   KanaShift: {title:'KanaShift',category:'language',description:'Windows 입력 언어 전환 도구'},
   'ANV-Core': {title:'AnkiVoice Core 1.x',category:'language',description:'Anki 덱 변환, 학습 자료 분석 툴'},
   'Anki-Add-on-Deck-Guard': {title:'Deck Guard',category:'language',description:'Anki 덱 보호 Add-on'},
-  'Crypto-Tool': {title:'Crypto Tool',category:'utility',description:'암호화, 복호화 도구}
+  'Crypto-Tool': {title:'Crypto Tool',category:'utility',description:'암호화, 복호화 도구'}
 };
 const excludedProjects = new Set(['luttechan.github.io', 'KanaShift-assets']);
 const fallback = Object.keys(curated).map(name => ({name,html_url:`https://github.com/luttechan/${name}`,language:name.endsWith('.io')?'HTML':'Python'}));
