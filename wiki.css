@@ -4,3 +4,25 @@
 @media(max-width:950px){.wiki-main{margin:20px 20px 30px;padding:26px}.wiki-layout{grid-template-columns:minmax(0,1fr) 270px;gap:25px}.wiki-page .header{padding:0 27px}.wiki-infobox dl{grid-template-columns:74px 1fr}.wiki-infobox dt,.wiki-infobox dd{padding:9px 8px}.wiki-table th,.wiki-table td{padding:9px}.wiki-article p{font-size:13px}.wiki-page footer{margin:0 20px}}
 @media(max-width:700px){.wiki-layout{display:flex;flex-direction:column;gap:28px}.wiki-infobox{order:-1;width:100%;max-width:360px;align-self:center}.wiki-infobox .character-art{aspect-ratio:5/4}.wiki-infobox dl{grid-template-columns:92px 1fr;font-size:13px}.wiki-infobox dt,.wiki-infobox dd{padding:10px 12px}.wiki-article{width:100%}.wiki-toc{display:block;min-width:0}.wiki-toc ol{display:grid;grid-template-columns:1fr 1fr;gap:1px 25px}.wiki-article p{font-size:14px}.wiki-page .header nav{gap:17px;font-size:12px}.wiki-site-header .logo{font-size:23px}.wiki-site-header .logo>span{font-size:18px}.wiki-site-header .logo .wiki-flower{font-size:24px;margin-right:4px}}
 @media(max-width:480px){.wiki-page .header{height:65px;padding:0 16px}.wiki-page .header nav{gap:13px}.wiki-page .header nav a:first-child{font-size:11px}.wiki-page .header nav a:last-child{display:none}.wiki-main{margin:14px 10px 25px;padding:21px 16px;border-radius:9px}.wiki-breadcrumb{font-size:10px;gap:6px;margin-bottom:22px}.wiki-heading h1{font-size:31px}.wiki-subtitle{font-size:11px}.document-badge{display:none}.wiki-tabs{font-size:12px;gap:19px}.wiki-tabs>span{font-size:8px;letter-spacing:0}.wiki-category{gap:7px 10px;font-size:10px}.series-banner{padding:13px 14px;gap:11px}.series-banner strong{font-size:11px}.series-banner>div>span{font-size:11px}.banner-symbol{font-size:28px}.wiki-article h2{font-size:21px}.wiki-article blockquote{font-size:13px;padding:12px 13px}.wiki-toc{padding:17px 21px}.wiki-toc li{font-size:12px}.wiki-table{font-size:12px}.wiki-table th{width:105px}.education-table th:first-child{width:48px}.education-table th:last-child{width:77px}.education-table th,.education-table td{padding:8px 7px}.education-table [lang=en]{font-size:11px}.wiki-end{font-size:9px;gap:6px}.wiki-end a{font-size:10px}.wiki-page footer{padding:0 5px 22px;font-size:10px}}
+
+.wiki-infobox .nationality-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nationality-entry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nationality-flag {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  flex: 0 0 24px;
+  object-fit: contain;
+  outline: 1px solid rgb(0 0 0 / 12%);
+  outline-offset: -1px;
+}
