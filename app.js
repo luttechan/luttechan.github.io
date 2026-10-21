@@ -3,9 +3,9 @@ const curated = {
   KanaShift: {title:'KanaShift',category:'language',description:'Windows 입력 언어 전환 도구.'},
   'ANV-Core': {title:'AnkiVoice Core',category:'language',description:'Anki 덱 변환, 어휘 퀴즈, 학습 기록 분석과 오디오 관리.'},
   'Anki-Add-on-Deck-Guard': {title:'Deck Guard',category:'language',description:'노트를 추가할 때 대상 덱을 확인하는 Anki 애드온.'},
-  'Crypto-Tool': {title:'Crypto Tool',category:'utility',description:'학습용 로컬 파일 암호화·복호화 도구.'},
-  'luttechan.github.io': {title:'luttechan.github.io',category:'web',description:'개발 프로젝트와 클로네 설정을 모아 둔 개인 페이지.'}
+  'Crypto-Tool': {title:'Crypto Tool',category:'utility',description:'학습용 로컬 파일 암호화·복호화 도구.'}
 };
+const excludedProjects = new Set(['luttechan.github.io', 'KanaShift-assets']);
 const fallback = Object.keys(curated).map(name => ({name,html_url:`https://github.com/luttechan/${name}`,language:name.endsWith('.io')?'HTML':'Python'}));
 let repositories = fallback, filter = 'all';
 const grid = document.querySelector('#project-grid');
@@ -31,7 +31,7 @@ function render(){
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',active);});render();}));
 search.addEventListener('input',render);render();
 function validRepos(data){return Array.isArray(data)&&data.every(repo=>typeof repo.name==='string'&&typeof repo.html_url==='string');}
-function sortRepos(data){const order=Object.keys(curated);return data.sort((a,b)=>{const ai=order.indexOf(a.name),bi=order.indexOf(b.name);return (ai<0?999:ai)-(bi<0?999:bi)||a.name.localeCompare(b.name);});}
+function sortRepos(data){const order=Object.keys(curated);return data.filter(repo=>!excludedProjects.has(repo.name)).sort((a,b)=>{const ai=order.indexOf(a.name),bi=order.indexOf(b.name);return (ai<0?999:ai)-(bi<0?999:bi)||a.name.localeCompare(b.name);});}
 async function loadProjects(){
   try{const response=await fetch('assets/projects.json');if(response.ok){const data=await response.json();if(validRepos(data)){repositories=sortRepos(data);render();}}}catch{/* Inline fallback keeps all current projects available. */}
   try{
