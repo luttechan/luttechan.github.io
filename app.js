@@ -1,11 +1,11 @@
 'use strict';
 const curated = {
-  KanaShift: {title:'KanaShift',category:'language',description:'Windows 입력 언어 전환 도구'},
+  Lexift: {title:'Lexift',category:'language',description:'Windows 입력 언어 전환 · 한글 발음으로 일본어·중국어 입력',aliases:'KanaShift',releases:'https://github.com/luttechan/Lexift/releases'},
   'ANV-Core': {title:'AnkiVoice Core 1.x',category:'language',description:'Anki 덱 변환, 학습 자료 분석 툴'},
   'Anki-Add-on-Deck-Guard': {title:'Deck Guard',category:'language',description:'Anki 덱 보호 Add-on'},
   'Crypto-Tool': {title:'Crypto Tool',category:'utility',description:'암호화, 복호화 도구'}
 };
-const excludedProjects = new Set(['luttechan.github.io', 'KanaShift-assets']);
+const excludedProjects = new Set(['luttechan.github.io', 'KanaShift-assets', 'Lexift-assets']);
 const fallback = Object.keys(curated).map(name => ({name,html_url:`https://github.com/luttechan/${name}`,language:name.endsWith('.io')?'HTML':'Python'}));
 let repositories = fallback, filter = 'all';
 const grid = document.querySelector('#project-grid');
@@ -13,12 +13,12 @@ const search = document.querySelector('#search');
 function safeUrl(value){try{const url=new URL(value);return url.protocol==='https:'?url.href:null;}catch{return null;}}
 function render(){
   const query=search.value.trim().toLocaleLowerCase();
-  const list=repositories.filter(repo=>{const detail=curated[repo.name]||{};return (filter==='all'||(detail.category||'utility')===filter)&&`${repo.name} ${detail.title||''} ${detail.description||''} ${repo.description||''} ${repo.language||''}`.toLocaleLowerCase().includes(query);});
+  const list=repositories.filter(repo=>{const detail=curated[repo.name]||{};return (filter==='all'||(detail.category||'utility')===filter)&&`${repo.name} ${detail.title||''} ${detail.aliases||''} ${detail.description||''} ${repo.description||''} ${repo.language||''}`.toLocaleLowerCase().includes(query);});
   grid.replaceChildren();
   list.forEach((repo,index)=>{
     const detail=curated[repo.name]||{title:repo.name,description:repo.description||'GitHub에서 프로젝트를 살펴보세요.'};
     const card=document.createElement('article');card.className='project-card';
-    const link=document.createElement('a');link.href=safeUrl(repo.html_url)||'https://github.com/luttechan';link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',`${detail.title} GitHub 저장소 열기 (새 창)`);
+    const link=document.createElement('a');link.href=safeUrl(detail.releases||repo.html_url)||'https://github.com/luttechan';link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',`${detail.title} ${detail.releases?'릴리스':'GitHub 저장소'} 열기 (새 창)`);
     const visual=document.createElement('span');visual.className='project-number';visual.textContent=String(index+1).padStart(2,'0');visual.setAttribute('aria-hidden','true');
     const info=document.createElement('div');info.className='project-info';const titleRow=document.createElement('div');titleRow.className='project-title';
     const title=document.createElement('h3');title.textContent=detail.title;const language=document.createElement('span');language.className='language';language.textContent=repo.language||'Repository';
@@ -31,9 +31,9 @@ function render(){
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',active);});render();}));
 search.addEventListener('input',render);render();
 function validRepos(data){return Array.isArray(data)&&data.every(repo=>typeof repo.name==='string'&&typeof repo.html_url==='string');}
-function sortRepos(data){const order=Object.keys(curated);return data.filter(repo=>!excludedProjects.has(repo.name)).sort((a,b)=>{const ai=order.indexOf(a.name),bi=order.indexOf(b.name);return (ai<0?999:ai)-(bi<0?999:bi)||a.name.localeCompare(b.name);});}
+function sortRepos(data){const order=Object.keys(curated);const renamed=data.map(repo=>repo.name==='KanaShift'?{...repo,name:'Lexift',html_url:'https://github.com/luttechan/Lexift'}:repo);const unique=[...new Map(renamed.map(repo=>[repo.name,repo])).values()];return unique.filter(repo=>!excludedProjects.has(repo.name)).sort((a,b)=>{const ai=order.indexOf(a.name),bi=order.indexOf(b.name);return (ai<0?999:ai)-(bi<0?999:bi)||a.name.localeCompare(b.name);});}
 async function loadProjects(){
-  try{const response=await fetch('assets/projects.json');if(response.ok){const data=await response.json();if(validRepos(data)){repositories=sortRepos(data);render();}}}catch{/* Inline fallback keeps all current projects available. */}
+  try{const response=await fetch('assets/projects.json?v=lexift-1');if(response.ok){const data=await response.json();if(validRepos(data)){repositories=sortRepos(data);render();}}}catch{/* Inline fallback keeps all current projects available. */}
   try{
     let all=[];
     for(let page=1;;page++){

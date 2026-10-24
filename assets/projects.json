@@ -27,9 +27,9 @@
     "archived": false
   },
   {
-    "name": "KanaShift",
-    "description": "A lightweight multilingual input utility designed to make switching among the languages.",
-    "html_url": "https://github.com/luttechan/KanaShift",
+    "name": "Lexift",
+    "description": "Windows language switching and Korean pronunciation input for Japanese and Chinese.",
+    "html_url": "https://github.com/luttechan/Lexift",
     "homepage": null,
     "language": "Python",
     "fork": false,
