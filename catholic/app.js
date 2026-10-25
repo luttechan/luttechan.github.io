@@ -2,6 +2,11 @@
   'use strict';
   // Catholic Douay–Rheims (Challoner), public domain. Psalms follow Vulgate numbering.
   const verses = [
+    ['But the souls of the just are in the hand of God, and the torment of death shall not touch them.', 'Wisdom 3:1', '25003'],
+    ['And their going away from us, for utter destruction: but they are in peace.', 'Wisdom 3:3', '25003'],
+    ['They that trust in him, shall understand the truth: and they that are faithful in love shall rest in him: for grace and peace is to his elect.', 'Wisdom 3:9', '25003'],
+    ['Wait on God with patience: join thyself to God, and endure, that thy life may be increased in the latter end.', 'Sirach 2:3', '26002'],
+    ['Ye that fear the Lord, love him, and your hearts shall be enlightened.', 'Sirach 2:10', '26002'],
     ['Let not your heart be troubled. You believe in God, believe also in me.', 'John 14:1', '50014'],
     ['In my Father\'s house there are many mansions. If not, I would have told you: because I go to prepare a place for you.', 'John 14:2', '50014'],
     ['Jesus saith to him: I am the way, and the truth, and the life. No man cometh to the Father, but by me.', 'John 14:6', '50014'],
