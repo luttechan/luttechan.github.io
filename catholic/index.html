@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f2eb">
+  <meta name="description" content="Sanctuary — 말씀과 음악 안에 잠시 머무는 작은 성소.">
+  <title>Sanctuary · 작은 성소</title>
+  <link rel="icon" href="./cross.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#scripture">말씀으로 건너뛰기</a>
+  <div class="sky" aria-hidden="true"><div class="halo"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div></div>
+  <header class="header">
+    <a class="brand" href="./" aria-label="Sanctuary 처음으로"><span class="small-cross" aria-hidden="true">✝</span> SANCTUARY<span class="brand-note">A LITTLE HEAVEN</span></a>
+    <a class="home-link" href="../">lutté <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <div class="intro"><span class="eyebrow">PAX ET BONUM</span><p>평화가 이곳에, 그리고 당신에게.</p></div>
+    <section class="sanctuary" id="scripture" aria-label="묵상할 말씀">
+      <div class="arch" aria-hidden="true"><div class="arch-inner"></div><div class="cross"></div><div class="horizon"></div><span class="arch-star star-one">✧</span><span class="arch-star star-two">✧</span></div>
+      <div class="verse-content">
+        <div class="section-label"><span></span> A MOMENT WITH GOD <span></span></div>
+        <h1 class="sr-only">말씀 안에 머무는 작은 성소</h1>
+        <div class="verse-wrap" aria-live="polite" aria-atomic="true">
+          <blockquote id="verse" lang="en">Let not your heart be troubled. You believe in God, believe also in me.</blockquote>
+          <a id="reference" class="reference" href="https://www.drbo.org/chapter/50014.htm" target="_blank" rel="noopener noreferrer" lang="en">John 14:1 <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="invitation">잠시 멈추어, 마음에 닿는 말씀 안에 머무르세요.</p>
+        <button class="next-verse" id="next-verse" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h3c4 0 6 10 10 10h3M17 14l3 3-3 3M4 17h3c1.3 0 2.5-1.2 3.5-3M14 9c1-1.3 1.8-2 3-2h3M17 4l3 3-3 3"/></svg>다른 말씀 만나기<span class="button-arrow" aria-hidden="true">→</span></button>
+      </div>
+    </section>
+    <section class="music" aria-labelledby="music-title">
+      <div class="music-heading"><span class="music-icon" aria-hidden="true">♫</span><div><h2 id="music-title">성소에 흐르는 음악</h2><p id="music-status" role="status">음악을 준비하고 있어요</p></div></div>
+      <button id="music-toggle" class="toggle" type="button" role="switch" aria-checked="true" aria-label="음악 재생"><span class="toggle-text">ON</span><span class="toggle-track" aria-hidden="true"><span></span></span></button>
+      <details id="player-details" class="player-details" open><summary>음악 플레이어 <span aria-hidden="true">⌄</span></summary><div class="player-frame"><div id="youtube-player"></div></div><div class="player-footer"><button id="sound-toggle" type="button">소리 켜기</button><a href="https://www.youtube.com/watch?v=QkuM54ter80" target="_blank" rel="noopener noreferrer">YouTube에서 듣기 ↗</a></div></details>
+      <noscript><p>음악과 무작위 말씀을 이용하려면 JavaScript를 켜 주세요. <a href="https://www.youtube.com/watch?v=QkuM54ter80">YouTube에서 음악 듣기</a></p></noscript>
+    </section>
+  </main>
+  <footer><p>작은 성소, 당신의 일상 가까이에.</p><div><span>DOUAY–RHEIMS BIBLE</span><span class="footer-cross" aria-hidden="true">✝</span><span>AD MAIOREM DEI GLORIAM</span></div></footer>
+</body>
+</html>
