@@ -1,12 +1,12 @@
 [
   {
     "id": "2026-10-26-first-note",
-    "title": "Test",
+    "title": "Learning Calander 관련 노트",
     "date": "2026-10-26",
     "published": true,
     "content": [
-      "Hello World",
-      "줄바꿈\n테스트"
+      "LearningCalander라는 Canvas 기반 크롤링 일정 관리 프로그램을 제작중입니다.",
+      "릴리즈 일정을 언제로 할 지는 모르겠습니다. 조만간 Github에는 탑재하겠습니다."
     ]
   }
 ]
