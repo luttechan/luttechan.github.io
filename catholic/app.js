@@ -48,13 +48,13 @@
     muted = false;
     syncSound();
     player.playVideo();
-    status(player.getPlayerState() === YT.PlayerState.PLAYING ? '음악과 함께 잠시 머무르세요' : '음악을 시작하고 있어요');
+    status(player.getPlayerState() === YT.PlayerState.PLAYING ? '재생 중' : '재생 중');
   }
   function unavailable() {
     clearTimeout(loadTimer);
     failed = true;
     ready = false;
-    status('음악을 불러오지 못했어요. YouTube에서 들어 주세요.');
+    status('재생 불가 · YouTube에서 듣기');
     $('sound-toggle').disabled = true;
   }
   function loadPlayer() {
@@ -80,17 +80,17 @@
           event.target.getIframe().setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
           event.target.setVolume(40);
           syncSound();
-          if (enabled) play(); else { event.target.pauseVideo(); status('음악이 꺼져 있어요'); }
+          if (enabled) play(); else { event.target.pauseVideo(); status('꺼짐'); }
         },
         onAutoplayBlocked() {
           if (!enabled) return;
           // Browsers usually permit muted autoplay when audible autoplay is blocked.
           if (!muted) {
             player.mute(); muted = true; syncSound();
-            status('음소거로 시작해요. 소리 켜기를 눌러 주세요.');
+            status('음소거 · 소리 켜기 ↓');
             player.playVideo();
           } else {
-            status('자동 재생이 차단됐어요. 소리 켜기를 눌러 주세요.');
+            status('소리 켜기를 눌러 주세요');
             $('sound-toggle').textContent = '소리 켜기';
           }
         },
@@ -102,10 +102,10 @@
           if (event.data === YT.PlayerState.PLAYING) {
             muted = player.isMuted();
             syncSound();
-            status(muted ? '음소거로 재생 중 · 소리 켜기를 눌러 주세요' : '음악과 함께 잠시 머무르세요');
+            status(muted ? '음소거 · 소리 켜기 ↓' : '재생 중');
           } else if (event.data === YT.PlayerState.PAUSED) {
             $('sound-toggle').textContent = '소리 켜기';
-            status(enabled ? '잠시 멈췄어요. 소리 켜기로 다시 들어보세요.' : '음악이 꺼져 있어요');
+            status(enabled ? '일시 정지' : '꺼짐');
           }
         },
         onError: unavailable
@@ -118,15 +118,15 @@
     remember();
     if (!enabled) {
       if (ready) player.pauseVideo();
-      status('음악이 꺼져 있어요');
+      status('꺼짐');
     } else if (failed) unavailable();
     else if (ready) play();
-    else { status('음악을 준비하고 있어요'); loadPlayer(); }
+    else { status('불러오는 중'); loadPlayer(); }
   });
   $('sound-toggle').addEventListener('click', () => {
     if (!ready) { enabled = true; syncToggle(); remember(); loadPlayer(); return; }
     if (enabled && player.getPlayerState() === YT.PlayerState.PLAYING && !player.isMuted()) {
-      player.mute(); muted = true; syncSound(); status('음소거로 재생 중이에요');
+      player.mute(); muted = true; syncSound(); status('음소거');
     } else { enabled = true; syncToggle(); remember(); play(); }
   });
   // Collapsing a player must pause it; autoplay resumes only with the player visible.
@@ -134,11 +134,11 @@
     if (!$('player-details').open && enabled) {
       enabled = false; syncToggle(); remember();
       if (ready) player.pauseVideo();
-      status('음악이 꺼져 있어요');
+      status('꺼짐');
     }
   });
   $('music-toggle').addEventListener('click', () => { if (enabled) $('player-details').open = true; });
   syncToggle();
   if (enabled) loadPlayer();
-  else { status('음악이 꺼져 있어요'); $('player-details').open = false; }
+  else { status('꺼짐'); $('player-details').open = false; }
 })();
