@@ -6,7 +6,8 @@
     <meta name="description" content="Lexift — 단축키로 입력기 전환, 한글 발음으로 일본어와 중국어 입력.">
     <meta name="color-scheme" content="light dark">
     <title>Lexift — 다운로드 및 사용설명서</title>
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="landing.css?v=cpu-notice-1">
+    <script src="landing.js?v=cpu-notice-1" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -16,6 +17,21 @@
       <a class="github" href="https://github.com/luttechan/Lexift">GitHub <span aria-hidden="true">↗</span>
       </a>
     </header>
+    <aside class="cpu-notice" id="cpu-notice" role="region" aria-labelledby="cpu-notice-title" hidden>
+      <p class="cpu-notice-label">필수 업데이트</p>
+      <h2 id="cpu-notice-title">CPU 호환성 수정</h2>
+      <p>Intel Core i5-10210U에서 발생한 일본어 변환 종료 오류를 수정했습니다.</p>
+      <p>AVX-512를 지원하지 않는 Intel 및 AMD CPU에서도 같은 오류가 발생할 수 있습니다.</p>
+      <p class="cpu-notice-required">기존 v1.0.4 사용자도 최신 수정본으로 반드시 업데이트해 주세요.</p>
+      <a class="cpu-notice-download" href="https://github.com/luttechan/Lexift/releases/download/v1.0.4/Lexift-1.0.4-Windows-x64.zip?build=6556da29a357">v1.0.4 다운로드</a>
+      <div class="cpu-notice-actions">
+        <label>
+          <input id="cpu-notice-dismiss" type="checkbox">
+          더 이상 표시하지 않음
+        </label>
+        <button id="cpu-notice-close" type="button">닫기</button>
+      </div>
+    </aside>
     <main>
 
       <section class="hero" aria-labelledby="title">
