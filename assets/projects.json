@@ -1,5 +1,11 @@
 [
   {
+    "name": "Calix",
+    "html_url": "https://github.com/luttechan/Calix",
+    "language": "Python",
+    "description": "과제와 영상을 한눈에"
+  },
+  {
     "name": "Anki-Add-on-Deck-Guard",
     "description": "It prevents notes from being added to the wrong deck.",
     "html_url": "https://github.com/luttechan/Anki-Add-on-Deck-Guard",
