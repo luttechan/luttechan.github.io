@@ -1,7 +1,7 @@
 'use strict';
 const curated = {
   Calix: {title:'Calix',category:'utility',description:'과제와 영상, 시간표와 일기를 한곳에',website:'https://luttechan.github.io/calix/',releases:'https://github.com/luttechan/Calix/releases'},
-  Lexift: {title:'Lexift',category:'language',description:'Windows 입력 언어 전환 · 한글 발음으로 일본어·중국어 입력',aliases:'KanaShift',releases:'https://github.com/luttechan/Lexift/releases'},
+  Lexift: {title:'Lexift',category:'language',description:'Windows 입력기 전환, 한글 발음으로 일본어와 중국어 입력',website:'https://luttechan.github.io/lexift/',aliases:'KanaShift',releases:'https://github.com/luttechan/Lexift/releases'},
   'ANV-Core': {title:'AnkiVoice Core 1.x',category:'language',description:'Anki 덱 변환, 학습 자료 분석 툴'},
   'Anki-Add-on-Deck-Guard': {title:'Deck Guard',category:'language',description:'Anki 덱 보호 Add-on'},
   'Crypto-Tool': {title:'Crypto Tool',category:'utility',description:'암호화, 복호화 도구'}

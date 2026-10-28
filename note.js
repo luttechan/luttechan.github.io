@@ -5,6 +5,8 @@
   const detail = document.querySelector('#note-detail');
   const status = document.querySelector('#note-status');
   const selectedId = new URLSearchParams(location.search).get('id');
+  const search = document.querySelector('#note-search');
+  let allNotes = [];
 
   function dateLabel(value) {
     if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
@@ -42,7 +44,7 @@
     return time;
   }
 
-  function showList(notes) {
+  function showList(notes, query = '') {
     const fragment = document.createDocumentFragment();
     for (const note of notes) {
       const item = document.createElement('li');
@@ -50,17 +52,24 @@
       link.href = `note.html?id=${encodeURIComponent(note.id)}`;
       const title = document.createElement('h2');
       title.textContent = note.title;
+      const info = document.createElement('div');
+      info.className = 'note-info';
+      const excerpt = document.createElement('p');
+      excerpt.className = 'note-excerpt';
+      excerpt.textContent = (Array.isArray(note.content) ? note.content[0] : note.content.split(/\r?\n/)[0]) || '';
+      info.append(title, excerpt);
       const arrow = document.createElement('span');
       arrow.className = 'note-arrow';
       arrow.textContent = '↗';
       arrow.setAttribute('aria-hidden', 'true');
-      link.append(timeElement(note), title, arrow);
+      link.append(timeElement(note), info, arrow);
       item.append(link);
       fragment.append(item);
     }
     document.querySelector('#notes').replaceChildren(fragment);
     status.hidden = notes.length > 0;
-    status.textContent = notes.length ? '' : '아직 등록된 글이 없습니다.';
+    status.textContent = notes.length ? '' : query ? '검색 결과가 없습니다.' : '아직 등록된 글이 없습니다.';
+    document.querySelector('#note-count').textContent = `${notes.length}개의 기록`;
   }
 
   function showDetail(note) {
@@ -83,6 +92,7 @@
       const response = await fetch('assets/notes.json', { cache: 'no-store' });
       if (!response.ok) throw new Error(`Note 요청 실패: ${response.status}`);
       const notes = publishedNotes(await response.json());
+      allNotes = notes;
       if (selectedId !== null) {
         const note = notes.find(entry => entry.id === selectedId);
         if (note) {
@@ -96,7 +106,7 @@
         status.append(back);
         return;
       }
-      showList(notes);
+      filterNotes();
     } catch (error) {
       console.error(error);
       status.textContent = '글을 불러오지 못했습니다. ';
@@ -108,4 +118,9 @@
   }
 
   load();
+  function filterNotes() {
+    const query = search.value.trim().toLocaleLowerCase();
+    showList(allNotes.filter(note => `${note.title} ${Array.isArray(note.content) ? note.content.join(' ') : note.content}`.toLocaleLowerCase().includes(query)), query);
+  }
+  search.addEventListener('input', filterNotes);
 })();

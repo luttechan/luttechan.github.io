@@ -3,32 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#0b0b0c" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="description" content="Lutté — Note" />
     <title>Note — Lutté</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="note.css" />
-    <script src="note.js" defer></script>
-    <script src="motion.js" defer></script>
+    <link rel="stylesheet" href="site-ui.css?v=20261028" />
+    <link rel="stylesheet" href="note.css?v=20261028" />
+    <script src="note.js?v=20261028" defer></script>
+    <script src="site-ui.js?v=20261028" defer></script>
   </head>
   <body id="top" class="note-page">
     <a class="skip" href="#content">본문으로</a>
-    <div class="progress" aria-hidden="true"></div>
-    <header class="header">
-      <a class="logo" href="index.html">lutté<span class="brand-dot">.</span></a>
-      <nav aria-label="주요 메뉴">
-        <a href="index.html#projects">Projects</a><a href="note.html" aria-current="page">Note</a><a href="clone.html">Cloné</a><a href="https://github.com/luttechan" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      </nav>
-    </header>
-    <main id="content" class="note-main">
+    <header class="site-header"><div class="header-inner">
+      <a class="logo" href="index.html" aria-label="Lutté 홈">lutté<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="메뉴 열기">메뉴 <span aria-hidden="true">＋</span></button>
+      <nav id="site-nav" aria-label="주 메뉴"><a href="index.html#projects">Projects</a><a href="note.html" aria-current="page">Note</a><a href="lutte_family/">Family</a><a href="clone.html">Cloné</a><a href="contact.html">Contact</a><a class="nav-external" href="https://github.com/luttechan">GitHub ↗</a></nav>
+    </div></header>
+    <main id="content" class="note-main page-width">
       <section id="note-list" aria-labelledby="note-heading">
-        <div class="note-heading">
-          <span class="eyebrow">LUTTÉ</span>
+        <div class="note-heading page-intro">
+          <p class="eyebrow">THOUGHTS & UPDATES</p>
           <h1 id="note-heading">Note<span>.</span></h1>
+          <p class="page-description">개발과 학습의 기록.</p>
         </div>
+        <div class="note-tools"><span id="note-count" class="note-count">기록</span><label class="search"><span class="sr-only">기록 검색</span><input id="note-search" type="search" placeholder="기록 검색" autocomplete="off"><span aria-hidden="true">⌕</span></label></div>
         <p id="note-status" class="note-status" role="status">불러오는 중…</p>
         <ol id="notes" class="notes"></ol>
       </section>
@@ -43,6 +43,6 @@
       </article>
       <noscript><p class="note-status">Note를 보려면 JavaScript를 켜주세요.</p></noscript>
     </main>
-    <footer><span>© <span id="year">2026</span> Lutté</span><a href="#top">맨 위로 ↑</a></footer>
+    <footer class="site-footer page-width"><span>© <span id="year">2026</span> Lutté</span><div><a href="index.html">Projects</a><a href="contact.html">Contact</a><a href="#top">위로 ↑</a></div></footer>
   </body>
 </html>
