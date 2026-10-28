@@ -4,7 +4,7 @@
   const close = document.getElementById('cpu-notice-close');
   if (!notice || !dismiss || !close) return;
 
-  const key = 'lexift:cpu-compatibility-1.0.4:dismissed';
+  const key = 'lexift:security-1.0.5:dismissed';
   const read = storage => {
     try {
       return window[storage].getItem(key) === '1';
