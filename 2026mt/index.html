@@ -7,16 +7,39 @@
   <meta name="description" content="2026년 2학기 부산외국어대학교 GAC MT. 11월 6일(금)부터 7일(토), 송정 해수락에서 만나요. 참가비 40,000원.">
   <meta property="og:title" content="2026 GAC MT — 우리의 가을, 송정에서."><meta property="og:description" content="11.6.(금)–11.7.(토) · 송정 해수락 · 참가비 40,000원">
   <meta property="og:image" content="https://luttechan.github.io/2026mt/assets/songjeong.jpg"><meta property="og:url" content="https://luttechan.github.io/2026mt/">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="assets/leaflet.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="assets/leaflet.css"><link rel="stylesheet" href="languages.css">
   <link rel="preload" href="assets/pretendard.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="assets/leaflet.js" defer></script><script src="app.js" defer></script>
+  <script src="assets/leaflet.js" defer></script><script src="locales.js?v=20261029" defer></script><script src="i18n.js?v=20261029" defer></script><script src="app.js?v=20261029-i18n" defer></script>
 </head>
 <body>
+<section id="language-gate" class="language-gate" role="dialog" aria-modal="true" aria-labelledby="language-title">
+  <div class="language-panel">
+    <a class="brand language-brand" href="#" tabindex="-1">GAC <span>MT</span><small>2026</small></a>
+    <svg class="language-globe" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="25"/><ellipse cx="32" cy="32" rx="12" ry="25"/><path d="M7 32h50M12 18h40M12 46h40"/></svg>
+    <p class="eyebrow" lang="en">WELCOME TO GAC MT 2026</p>
+    <h1 id="language-title" lang="en">Choose your language.</h1><p class="language-subtitle" lang="ko">언어를 선택해 주세요.</p>
+    <div class="language-options" aria-label="Language / 언어">
+      <button type="button" data-language="ko" lang="ko"><span>한국어</span><small>Korean</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="en" lang="en"><span>English</span><small>English</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="ja" lang="ja"><span>日本語</span><small>Japanese</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="zh-Hans" lang="zh-Hans"><span>简体中文</span><small>Simplified Chinese</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="zh-Hant" lang="zh-Hant"><span>繁體中文</span><small>Traditional Chinese</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="id" lang="id"><span>Bahasa Indonesia</span><small>Indonesian</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="ru" lang="ru"><span>Русский</span><small>Russian</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="kk" lang="kk"><span>Қазақша</span><small>Kazakh</small><b aria-hidden="true">↗</b></button>
+      <button type="button" data-language="fr" lang="fr"><span>Français</span><small>French</small><b aria-hidden="true">↗</b></button>
+    </div>
+    <button id="language-cancel" class="text-link" type="button" hidden>Back to the site</button>
+    <noscript><p>Please enable JavaScript to select a language. 언어 선택을 위해 JavaScript를 활성화해 주세요.</p></noscript>
+  </div>
+</section>
+<div id="site-shell" hidden inert>
 <a class="skip" href="#main">본문으로 바로가기</a>
 <header class="header"><nav class="nav wrap" aria-label="메인 메뉴">
   <a class="brand" href="#" aria-label="GAC MT 처음으로">GAC <span>MT</span><small>2026</small></a>
   <div class="nav-links"><a href="#experience">프로그램</a><a href="#stay">숙소</a><a href="#directions">오시는 길</a></div>
   <a class="pill small" href="#join">참가 안내</a>
+  <button id="language-switch" class="language-switch" type="button" aria-label="언어 변경" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg><span id="language-code">KO</span></button>
 </nav></header>
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
@@ -55,6 +78,7 @@
   <section class="notes wrap" aria-label="참가 전 참고 사항"><h3>가볍게 챙기고, 즐겁게 만나요.</h3><div><p><b>준비물</b> 편한 운동복과 운동화, 여벌 옷, 세면도구, 개인 물품.</p><p><b>함께 지킬 약속</b> 술은 자율적으로 적당히. 서로의 컨디션을 먼저 살펴주세요.</p><p><b>추가 안내</b> 집결 장소·시각, 참가 신청 방법과 입금 기한은 추후 운영진 안내를 확인해 주세요.</p></div></section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footer-top"><a class="brand" href="#">GAC <span>MT</span><small>2026</small></a><img src="assets/bufs-logo.png" alt="부산외국어대학교" width="240" height="64"></div><p>부산외국어대학교 GAC · 2026년 2학기 MT 안내</p><details><summary>자료 출처</summary><p>대학 로고: <a href="https://eu.bufs.ac.kr/bbs/board.php?bo_table=aboutbufs">부산외국어대학교 공식 홈페이지</a> · 은행 로고: <a href="https://www.busanbank.co.kr/ib20/mnu/BHPBKI400004000">BNK 부산은행 공식 홈페이지</a>. 소속 및 입금 은행 안내 목적으로 사용했습니다.</p><p>역 순서 및 노선색: <a href="https://work.humetro.busan.kr/homepage/cyberstation/map.do">부산교통공사 사이버스테이션</a> (2026.10.29 확인). 지도: Leaflet / © OpenStreetMap contributors. 숙소 사진: 사용자 제공.</p><p>송정해수욕장 사진: <a href="https://commons.wikimedia.org/wiki/File:Songjeong_at_the_beach_13.jpg">Sgroey, Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. 원본을 화면 비율에 맞춰 표시했습니다. 여름에 촬영된 지역 참고 사진입니다.</p></details></div></footer>
+</div>
 <dialog id="photo-dialog" aria-label="숙소 사진 크게 보기"><button id="close-photo" aria-label="사진 닫기">×</button><img id="dialog-image" alt=""><div class="dialog-bottom"><button id="previous-photo" aria-label="이전 사진">←</button><span id="photo-label" aria-live="polite"></span><button id="next-photo" aria-label="다음 사진">→</button></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 </body></html>
