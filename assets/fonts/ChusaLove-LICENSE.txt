@@ -1,0 +1,7 @@
+추사사랑체 (ChusaLove)
+저작권자 / 제공: 예산군청
+공식 출처: https://www.yesan.go.kr/kor/sub05_02_05.do
+이용 조건: 공공누리 제1유형 — 출처표시
+https://www.kogl.or.kr/info/licenseType1.do
+
+예산군 공식 배포본 ChusaLove.ttf를 바탕으로, Playlist에서 사용하는 글자를 포함한 WOFF2 웹폰트로 변환하였습니다.
