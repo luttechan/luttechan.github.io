@@ -104,3 +104,22 @@ html{scroll-padding-top:85px}body.playlist-page{background:var(--bg);font-size:1
   .dock-controls { gap: 11px; }
   .transport { gap: 9px; }
 }
+
+.track-trembling > span, .track-trembling strong { font-family:Manrope,Pretendard,sans-serif !important; font-size:13px; font-weight:600; letter-spacing:-.035em; }
+.track-trembling small { font-family:Manrope,Pretendard,sans-serif; font-weight:400; }
+
+/* One entry screen and one shared player for the whole library. */
+.entry-gate .gate-content .playlist-entry-title { font:650 clamp(64px,11vw,112px)/1.2 Manrope,Pretendard,sans-serif; letter-spacing:-.085em; color:#f2ebf3; text-shadow:0 5px 40px #16091f80; }
+.playlist-entry-title > span { color:#c298c7; }
+.gate-covers { display:flex; justify-content:center; align-items:center; margin:26px 0 24px; gap:12px; }
+.gate-covers img { width:105px; height:90px; object-fit:cover; border-radius:5px; box-shadow:0 8px 25px #0004; }
+.gate-covers img:first-child { transform:rotate(-8deg) translateY(7px); }
+.gate-covers img:last-child { transform:rotate(8deg) translateY(7px); }
+.library #library-tracks { margin-top:7px; }
+.hero-label > span#hero-source { width:auto; height:auto; border-radius:0; background:none; box-shadow:none; }
+.song-album { overflow-wrap:anywhere; }
+.transport > button.track-skip { font-size:17px; }
+.transport > button:disabled { opacity:.25; cursor:default; }
+@media(max-width:760px) { .gate-covers { gap:9px; } .gate-covers img { width:85px; height:74px; } .transport > button.track-skip,.transport > #previous-track { display:grid; width:22px; font-size:16px; } .dock-controls { gap:8px; } .transport { gap:8px; } .timeline { gap:4px; } .timeline time { width:25px; font-size:8px; } .timeline input { width:100%; } }
+
+.hero-artists > span.latin-artist { font:600 clamp(20px,2.2vw,29px) Manrope,Pretendard,sans-serif; letter-spacing:-.04em; }
