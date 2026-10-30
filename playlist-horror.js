@@ -4,7 +4,7 @@
   const body = document.body;
   const effects = $('horror-effects');
   if (!effects) return;
-  let enabled = true, entered = false, selected = false;
+  let entered = false, selected = false;
   let currentStage = '', shownMessages = 0, lastTime = 0, isPlaying = false;
   const messages = () => [
     '그냥 같이 있고 싶은 것 뿐이야 내 친구들이랑 다 같이.',
@@ -47,13 +47,16 @@
   };
   function render(time, playing) {
     lastTime = time; isPlaying = playing;
-    const active = entered && enabled && selected;
+    const active = entered && selected;
     const stage = active ? stageAt(time) : '';
     effects.hidden = !active;
     body.classList.toggle('horror-distorted', active && time >= 27);
     body.classList.toggle('horror-paused', !playing);
     body.classList.toggle('horror-invert', stage === 'invert');
     body.classList.toggle('horror-error-state', stage === 'errors');
+    const finalWarp = active && time >= 133 && time < 134;
+    body.classList.toggle('horror-breakdown', finalWarp);
+    $('horror-final').hidden = !finalWarp;
     ['black', 'escape', 'errors', 'chat'].forEach(name => { $('horror-' + name).hidden = stage !== name; });
     if (stage !== currentStage) {
       currentStage = stage;
@@ -76,21 +79,14 @@
   }
   document.addEventListener('playlist:entered', event => {
     entered = true; selected = event.detail.trackId === 'trembling';
-    $('horror-controls').hidden = !selected; render(0, false);
+    render(0, false);
   });
   document.addEventListener('playlist:track', event => {
     selected = event.detail.id === 'trembling';
-    $('horror-controls').hidden = !entered || !selected;
     render(0, false);
   });
   document.addEventListener('playlist:time', event => {
     const time = Number(event.detail.time);
     if (Number.isFinite(time)) render(time, Boolean(event.detail.playing));
-  });
-  $('effects-toggle').addEventListener('click', () => {
-    enabled = !enabled;
-    $('effects-toggle').setAttribute('aria-pressed', String(enabled));
-    $('effects-toggle').textContent = enabled ? '연출 끄기' : '연출 켜기';
-    render(lastTime, isPlaying);
   });
 })();

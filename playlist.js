@@ -12,8 +12,17 @@
     if (className) node.className = className;
     return node;
   };
+  const setArtwork = (img, track) => {
+    img.onerror = () => {
+      img.onerror = null;
+      img.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(track.videoId) + '/hqdefault.jpg';
+    };
+    img.decoding = 'async';
+    img.loading = 'eager';
+    img.src = track.image;
+  };
   const image = (track, width, height) => {
-    const img = document.createElement('img'); img.src = track.image; img.alt = ''; img.width = width; img.height = height; return img;
+    const img = document.createElement('img'); setArtwork(img, track); img.alt = ''; img.width = width; img.height = height; return img;
   };
   const artist = track => track.artist + (track.featured ? ' · ' + track.featured : '');
   const number = track => String(tracks.indexOf(track) + 1).padStart(2, '0');
@@ -65,7 +74,7 @@
     const title = $('track-title'); title.replaceChildren(); title.lang = selected.lang;
     if (selected.id === 'trembling') title.append(document.createTextNode('Trembling'), document.createElement('br'), text('em', 'Moods'));
     else title.textContent = selected.title;
-    const hero = document.querySelector('.hero-image'); hero.src = selected.image; hero.alt = selected.alt;
+    const hero = document.querySelector('.hero-image'); setArtwork(hero, selected); hero.alt = selected.alt;
     $('hero-source').textContent = selected.source + ' / 0' + number(selected);
     $('hero-side-label').textContent = selected.source + ' · 0' + number(selected);
     $('track-number').textContent = ' / 0' + number(selected);
@@ -80,14 +89,14 @@
     $('hero-meta').replaceChildren(...[selected.source, number(selected)].map(value => text('span', value)));
     $('hero-edition').textContent = selected.id === 'heuksaja' ? '黑' : selected.id === 'trembling' ? '♥' : number(selected);
     $('credit-number').textContent = number(selected);
-    const creditImage = document.querySelector('.credit-card > img'); creditImage.src = selected.image; creditImage.alt = selected.title + ' YouTube 썸네일';
+    const creditImage = document.querySelector('.credit-card > img'); setArtwork(creditImage, selected); creditImage.alt = selected.title + ' YouTube 썸네일';
     $('credit-names').replaceChildren();
     $('credit-names').append(text('p', selected.id === 'heuksaja' ? 'PahNic (RAVE)' : selected.artist));
     if (selected.credit) {
       $('credit-names').append(text('span', selected.id === 'heuksaja' ? '×' : 'VOCAL'), text('p', selected.credit, selected.id === 'heuksaja' ? 'credit-korean' : 'credit-japanese'));
     } else $('credit-names').append(text('span', 'COMPOSER'), text('p', selected.title, 'credit-track-title'));
     $('credit-source').textContent = selected.source;
-    const dockImage = document.querySelector('.dock-track img'); dockImage.src = selected.image;
+    const dockImage = document.querySelector('.dock-track img'); setArtwork(dockImage, selected);
     $('dock-title').textContent = selected.title; $('dock-title').lang = selected.lang;
     $('dock-artist').textContent = artist(selected);
     document.querySelectorAll('[data-youtube-link]').forEach(link => { link.href = selected.url; });
@@ -215,5 +224,6 @@
   $('restart-track').addEventListener('click', () => { if (ready) { player.seekTo(0,true); player.playVideo(); emitTime(0); } });
   window.addEventListener('popstate', () => { selectTrack(new URLSearchParams(location.search).get('track') || tracks[0].id, false); });
   window.addEventListener('pagehide', () => { clearInterval(timer); if (ready) player.pauseVideo(); });
+  document.querySelectorAll('.gate-covers img').forEach((img, index) => { if (tracks[index]) setArtwork(img, tracks[index]); });
   $('mute-toggle').disabled = true; renderTrack(); $('enter-sound').focus({preventScroll:true});
 })();
