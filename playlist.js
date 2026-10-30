@@ -1,6 +1,8 @@
 'use strict';
 (() => {
   const $ = id => document.getElementById(id);
+  const videoId = document.body.dataset.videoId || 'WN68VoQ-mEg';
+  const videoTitle = document.body.dataset.videoTitle || '흑사자 — PahNic (RAVE) × 판구리 | DJMAX RESPECT V';
   const playButtons = [...document.querySelectorAll('[data-toggle-play]')];
   let player, frame, ready = false, entered = false, muted = false, playing = false;
   let timer, loadTimer, autoplayFallback = false;
@@ -100,12 +102,12 @@
     // Create the autoplay iframe within the user's click, before any asynchronous API load.
     frame = document.createElement('iframe');
     frame.id = 'youtube-player';
-    frame.title = '흑사자 — PahNic (RAVE) × 판구리 | DJMAX RESPECT V';
+    frame.title = videoTitle;
     frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     frame.allowFullscreen = true;
     frame.referrerPolicy = 'strict-origin-when-cross-origin';
     const params = new URLSearchParams({autoplay:'1', mute:muted ? '1' : '0', enablejsapi:'1', playsinline:'1', controls:'1', rel:'0', origin:location.origin});
-    frame.src = 'https://www.youtube-nocookie.com/embed/WN68VoQ-mEg?' + params;
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?' + params;
     $('youtube-player').replaceWith(frame);
     status('');
     loadTimer = setTimeout(unavailable, 18000);
