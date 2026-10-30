@@ -1,0 +1,18 @@
+#revolution-intro{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#060608;color:#f5f3f4;z-index:10000;overflow:hidden;overscroll-behavior:contain}
+#revolution-intro::backdrop{background:#060608}
+#revolution-intro:before{content:"";position:absolute;width:90vw;height:90vw;max-width:1100px;max-height:1100px;left:50%;top:58%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,#742d4c26,transparent 66%);pointer-events:none}
+.intro-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 24px 100px}
+.intro-kicker{font-size:11px;letter-spacing:.3em;color:#aaa0a6;margin:0 0 12px}
+.intro-wordmark{width:min(790px,90vw);height:auto;overflow:visible;margin:-8px 0 14px;flex-shrink:1;min-height:0;max-height:58dvh}
+.intro-wordmark path{fill:none;stroke:#f5ebf0;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:calix-ink var(--duration) var(--delay) ease-out forwards;filter:drop-shadow(0 0 8px #dca2bc26)}
+.intro-actions{display:flex;align-items:center;gap:24px;animation:intro-appear 1s .7s both}
+.intro-enter{border:0;background:#f6f1f4;color:#161218;border-radius:999px;padding:15px 26px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s,background .2s}
+.intro-enter:hover{transform:translateY(-2px);background:#fff}.intro-enter span{padding-left:18px}
+.intro-download{font-size:12px;color:#c0b1ba;white-space:nowrap}.intro-download:hover{color:#fff}
+.intro-skip{position:absolute;right:36px;top:30px;z-index:1;background:none;border:0;padding:10px;color:#b8aeb5;font:inherit;font-size:12px;cursor:pointer}
+.intro-foot{position:absolute;bottom:35px;left:20px;right:20px;text-align:center;font-size:10px;letter-spacing:.06em;color:#81747d}
+#revolution-intro.leaving{animation:intro-leave .5s ease both;pointer-events:none}
+#revolution-intro :focus-visible{outline:2px solid #edbad1;outline-offset:6px}
+@keyframes calix-ink{to{stroke-dashoffset:0}}@keyframes intro-appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes intro-leave{to{opacity:0;transform:scale(1.025)}}
+@media(max-width:600px){.intro-actions{flex-direction:column;gap:22px}.intro-content{padding:70px 15px 100px}.intro-wordmark{width:96vw;margin:10px 0 36px}.intro-skip{top:16px;right:16px}.intro-foot{font-size:9px;bottom:28px}}
+@media(prefers-reduced-motion:reduce){.intro-wordmark path{animation:none;stroke-dashoffset:0}.intro-actions{animation:none}#revolution-intro.leaving{animation:none}}

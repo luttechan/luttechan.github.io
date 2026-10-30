@@ -13,7 +13,7 @@ const preview=document.querySelector('#theme-preview');
 const themeLabels={pink:'핑크',sky:'스카이블루',mint:'민트',purple:'퍼플',dark:'다크'};
 document.querySelectorAll('[data-theme]').forEach(button=>button.addEventListener('click',async()=>{
   const theme=button.dataset.theme;const request=++themeRequest;
-  const image=new Image();image.src=`assets/home-${theme}.webp?v=140`;
+  const image=new Image();image.src=`assets/home-${theme}.webp?v=142`;
   try{await image.decode();}catch{return;}
   if(request!==themeRequest)return;
   document.querySelectorAll('[data-theme]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});
@@ -21,4 +21,5 @@ document.querySelectorAll('[data-theme]').forEach(button=>button.addEventListene
   document.querySelector('.theme-stage').dataset.activeTheme=theme;
   document.querySelector('.theme-status').textContent=`${themeLabels[theme]} 테마`;
 }));
+
 

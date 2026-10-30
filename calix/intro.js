@@ -1,0 +1,5 @@
+(()=>{'use strict';const intro=document.querySelector('#revolution-intro');if(!intro)return;let seen=false;try{seen=sessionStorage.getItem('calix-intro-142')==='seen';}catch{}
+if(seen){intro.remove();return;}if(intro.open)intro.close();intro.showModal();const heading=intro.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});document.documentElement.style.overflow='hidden';
+let leaving=false;function enter(){if(leaving)return;leaving=true;try{sessionStorage.setItem('calix-intro-142','seen');}catch{}intro.classList.add('leaving');const finish=()=>{intro.close();intro.remove();document.documentElement.style.overflow='';document.querySelector('main h1')?.setAttribute('tabindex','-1');document.querySelector('main h1')?.focus({preventScroll:true});};if(matchMedia('(prefers-reduced-motion:reduce)').matches)finish();else setTimeout(finish,500);}
+intro.querySelectorAll('[data-enter]').forEach(button=>button.addEventListener('click',enter));intro.addEventListener('cancel',event=>{event.preventDefault();enter();});
+})();
