@@ -1,77 +1,42 @@
-const intro = document.querySelector('.boot');
-const output = intro.querySelector('.console-output');
-const replay = document.querySelector('#replay-intro');
+const stage = document.querySelector('.type-stage');
+const source = stage.querySelector('.stage-source');
+const result = stage.querySelector('.stage-result');
+const counter = stage.querySelector('.stage-index');
+const key = stage.querySelector('.stage-key');
+const modes = stage.querySelector('.demo-modes');
+const replay = stage.querySelector('.stage-replay');
+const examples = [...document.querySelectorAll('[data-demo-key]')];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const examples = [...document.querySelectorAll('[data-input]')];
-let playback;
+let selection = 0;
+let reveal;
 
-function stopIntro() {
-  playback?.abort();
-  if (intro.open) intro.close();
-}
-
-function sleep(ms, signal) {
-  return new Promise(resolve => {
-    const abort = () => {
-      clearTimeout(timer);
-      resolve();
-    };
-    const timer = setTimeout(() => {
-      signal.removeEventListener('abort', abort);
-      resolve();
-    }, ms);
-    signal.addEventListener('abort', abort, { once: true });
-  });
-}
-
-async function playIntro() {
-  if (intro.open) return;
-  const controller = new AbortController();
-  playback = controller;
-  const { signal } = controller;
-  output.replaceChildren();
-  const cursor = document.createElement('span');
-  cursor.className = 'cursor';
-  cursor.textContent = '•';
-  output.append(cursor);
-  intro.showModal();
-
-  await sleep(430, signal);
-  for (const example of examples) {
-    if (signal.aborted) return;
-    const line = document.createElement('p');
-    const prefix = example.dataset.mode + ' > ';
-    const input = document.createTextNode(prefix);
-    line.append(input, cursor);
-    output.append(line);
-    for (const character of example.dataset.input) {
-      if (signal.aborted) return;
-      input.appendData(character);
-      if (!reducedMotion.matches) await sleep(38, signal);
-    }
-    await sleep(235, signal);
-    if (signal.aborted) return;
-    const quote = example.querySelector('blockquote');
-    input.data = prefix + quote.textContent;
-    line.lang = quote.lang;
-    line.className = 'console-result';
-    await sleep(460, signal);
+function showExample(index) {
+  const example = examples[index];
+  const next = example.querySelector('.example-result');
+  selection = index;
+  source.textContent = example.querySelector('.phonetic').textContent;
+  result.textContent = next.textContent;
+  result.lang = next.lang;
+  key.textContent = example.dataset.demoKey;
+  counter.textContent = `0${index + 1} / 0${examples.length}`;
+  for (const button of modes.querySelectorAll('button')) {
+    button.setAttribute('aria-pressed', String(Number(button.dataset.demo) === index));
   }
-  if (!signal.aborted) stopIntro();
+  reveal?.cancel();
+  if (!reducedMotion.matches) {
+    reveal = result.animate([
+      { opacity: 0, transform: 'translateY(14px)', clipPath: 'inset(0 0 100% 0)' },
+      { opacity: 1, transform: 'translateY(0)', clipPath: 'inset(0 0 0 0)' },
+    ], { duration: 420, easing: 'cubic-bezier(.22,.75,.28,1)' });
+  }
 }
 
-document.querySelector('#skip-intro').addEventListener('click', stopIntro);
-intro.addEventListener('cancel', event => {
-  event.preventDefault();
-  stopIntro();
-});
+modes.hidden = false;
 replay.hidden = false;
-replay.addEventListener('click', playIntro);
-try {
-  if (!location.hash && !sessionStorage.getItem('lexift-intro-110')) {
-    sessionStorage.setItem('lexift-intro-110', 'seen');
-    if (!reducedMotion.matches) void playIntro();
-  }
-} catch {
-  if (!location.hash && !reducedMotion.matches) void playIntro();
-}
+modes.addEventListener('click', event => {
+  const button = event.target.closest('button[data-demo]');
+  if (button) showExample(Number(button.dataset.demo));
+});
+replay.addEventListener('click', () => showExample(selection));
+reducedMotion.addEventListener('change', () => reveal?.cancel());
+showExample(selection);

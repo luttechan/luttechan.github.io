@@ -11,64 +11,83 @@
   <title>Lexift Official</title>
   <link rel="canonical" href="https://luttechan.github.io/lexift/">
   <link rel="icon" href="assets/lexift-icon.svg?v=2" type="image/svg+xml">
-  <link rel="stylesheet" href="landing.css?v=110">
-  <script src="landing.js?v=110" defer></script>
+  <link rel="stylesheet" href="landing.css?v=111">
+  <script src="landing.js?v=111" defer></script>
 </head>
 <body>
-  <dialog class="boot" aria-label="Lexift 인트로">
-    <div class="console">
-      <header class="console-bar"><span>LEXIFT / INPUT SESSION</span><button id="skip-intro" autofocus>건너뛰기 ↗</button></header>
-      <div class="console-output" aria-hidden="true"></div>
-      <noscript>Lexift</noscript>
-    </div>
-  </dialog>
+  <a class="skip-link" href="#main">본문 바로가기</a>
   <header class="masthead">
     <a class="brand" href="./" aria-label="Lexift 홈"><img src="assets/lexift-icon.svg?v=2" width="32" height="32" alt="">Lexift</a>
     <nav aria-label="주 메뉴">
+      <a href="#examples">입력 예시</a>
       <a href="#manual">사용 설명서</a>
       <a href="https://github.com/luttechan/Lexift">GitHub ↗</a>
     </nav>
   </header>
-  <main>
+  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">LEXIFT 1.1 / WINDOWS</p>
-        <h1 id="hero-title" lang="en">Stop the<br>keyboard-switching<br>bullsh*t.</h1>
-        <p class="tagline" lang="en">Shift the Way You Learn.</p>
-        <p>한글 발음으로 일본어와 중국어를 입력하세요.</p>
-        <a class="download" href="https://github.com/luttechan/Lexift/releases/download/v1.1.0/Lexift-1.1.0-Setup-x64.exe">Windows 설치기 ↓</a>
-        <p class="platform">Windows 10 / 11 · x64</p>
+        <p class="eyebrow">LEXIFT FOR WINDOWS</p>
+        <h1 id="hero-title">발음은 그대로.<br>표기는 자유롭게.</h1>
+        <p class="hero-description">한글 발음으로 일본어와 중국어를 입력하세요.</p>
+        <div class="hero-actions">
+          <a class="download" href="https://github.com/luttechan/Lexift/releases/download/v1.1.0/Lexift-1.1.0-Setup-x64.exe">Windows용 다운로드 <span aria-hidden="true">↓</span></a>
+          <a class="explore" href="#product">Lexift 만나보기 <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="platform">v1.1.0 <span aria-hidden="true">/</span> Windows 10·11 x64</p>
       </div>
-      <div class="hero-type" aria-hidden="true"><span lang="ja">あ</span><span lang="zh-Hant">語</span><span lang="ko">한</span></div>
+      <section class="type-stage" aria-label="입력 변환 미리보기">
+        <div class="stage-top"><span>입력 미리보기</span><span class="stage-index">01 / 03</span></div>
+        <div class="demo-modes" role="group" aria-label="변환 예시 선택" hidden>
+          <button type="button" data-demo="0" aria-pressed="true">일본어</button>
+          <button type="button" data-demo="1" aria-pressed="false">간체</button>
+          <button type="button" data-demo="2" aria-pressed="false">번체</button>
+        </div>
+        <div class="stage-text" aria-live="polite" aria-atomic="true">
+          <p class="stage-source">와타시</p>
+          <span class="stage-arrow" aria-hidden="true">↓</span>
+          <p class="stage-result" lang="ja">私</p>
+        </div>
+        <div class="stage-bottom"><span><kbd>Caps</kbd> + <kbd class="stage-key">A</kbd></span><button class="stage-replay" type="button" hidden>다시 변환 <span aria-hidden="true">↻</span></button></div>
+      </section>
     </section>
-    <figure class="app-preview"><img src="guide/1.1.0/assets/home-ko.png" alt="Lexift 1.1 홈 화면" width="1120" height="820" loading="lazy"></figure>
-    <section class="examples" aria-labelledby="examples-title">
+    <section class="product content-width" id="product" aria-labelledby="product-title">
       <div class="section-head">
-        <p class="eyebrow">01 / INPUT</p>
+        <p class="eyebrow" lang="en">Shift the Way You Learn.</p>
+        <h2 id="product-title">한 곳에서 바꾸고,<br>쓰던 곳에서 계속.</h2>
+        <p class="section-description">입력 언어와 단축키는 Lexift에서 설정하세요.</p>
+      </div>
+      <figure class="app-preview">
+        <img src="guide/1.1.0/assets/home-ko.png" alt="Lexift 1.1 홈 화면의 변환 기능과 입력 언어 목록" width="1120" height="820" loading="lazy">
+      </figure>
+    </section>
+    <div class="signature-band"><p lang="en">Stop the keyboard-switching bullsh*t.</p></div>
+    <section class="examples content-width" id="examples" aria-labelledby="examples-title">
+      <div class="section-head">
+        <p class="eyebrow">입력 예시</p>
         <h2 id="examples-title">발음대로 쓰세요.</h2>
-        <button id="replay-intro" class="replay" hidden>인트로 다시 보기 ↗</button>
+        <p class="section-description">한글로 적고, 원하는 표기를 후보에서 고르세요.</p>
       </div>
       <div class="quote-grid">
-        <figure class="quote" data-input="지츠존와 혼시츠니 센코-스루" data-mode="KO → JA">
-          <p class="phonetic">지츠존와 혼시츠니 센코-스루</p>
-          <blockquote lang="ja">実存は本質に先行する。</blockquote>
-          <figcaption>사르트르 <a href="https://expositions.bnf.fr/sartre/grand/122.htm">『실존주의는 휴머니즘이다』</a></figcaption>
+        <figure class="quote" data-demo-key="A">
+          <span class="quote-mode">일본어</span>
+          <p class="phonetic">와타시</p>
+          <p class="example-result" lang="ja">私</p>
         </figure>
-        <figure class="quote" data-input="링훈 베이 스샹 란써" data-mode="KO → ZH">
-          <p class="phonetic">링훈 베이 스샹 란써</p>
-          <blockquote lang="zh-Hant">靈魂被思想染色。</blockquote>
-          <figcaption>마르쿠스 아우렐리우스 <a href="https://marcusaurelius-meditations.org/en/chapters/book-05/16/">『명상록』 5.16</a></figcaption>
+        <figure class="quote" data-demo-key="C">
+          <span class="quote-mode">중국어 간체</span>
+          <p class="phonetic">니하오</p>
+          <p class="example-result" lang="zh-Hans">你好</p>
         </figure>
-        <figure class="quote" data-input="진세이와 마에무키니 이키루 모노다" data-mode="KO → JA">
-          <p class="phonetic">진세이와 마에무키니 이키루 모노다</p>
-          <blockquote lang="ja">人生は前向きに生きるものだ。</blockquote>
-          <figcaption>키르케고르 <a href="https://tekster.kb.dk/text/adl-texts-kierkegaard03val-shoot-workid54108.pdf">『일기』 JJ:167</a> 발췌 의역</figcaption>
+        <figure class="quote" data-demo-key="T">
+          <span class="quote-mode">중국어 번체</span>
+          <p class="phonetic">중궈</p>
+          <p class="example-result" lang="zh-Hant">中國</p>
         </figure>
       </div>
-      <p class="example-note">철학 문장을 번역해 구성한 입력 연출입니다.</p>
     </section>
-    <section class="manual" id="manual" aria-labelledby="manual-title">
-      <div class="section-head"><p class="eyebrow">02 / SHORTCUTS</p><h2 id="manual-title">사용 설명서</h2></div>
+    <section class="manual content-width" id="manual" aria-labelledby="manual-title">
+      <div class="section-head"><p class="eyebrow">시작하기</p><h2 id="manual-title">사용 설명서</h2></div>
       <dl class="shortcuts">
         <div><dt>입력 언어 선택</dt><dd><kbd>Caps</kbd> + <kbd>Q</kbd></dd></div>
         <div><dt>일본어</dt><dd><kbd>Caps</kbd> + <kbd>A</kbd></dd></div>
@@ -83,7 +102,7 @@
         <a href="guide/1.1.0/zh_TW.html" lang="zh-Hant">繁體中文 ↗</a>
       </nav>
     </section>
-    <aside class="related" aria-label="Calix 소개">
+    <aside class="related content-width" aria-label="Calix 소개">
       <a href="../calix/"><img src="../calix/assets/calix.svg" alt="" width="48" height="48"><span><strong>Calix</strong><small>부산외대 Canvas 과제와 강의 영상, 시간표를 한곳에.</small></span><span aria-hidden="true">↗</span></a>
     </aside>
   </main>
