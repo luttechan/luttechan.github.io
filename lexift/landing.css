@@ -105,3 +105,40 @@
 .stage-result:lang(ja) { font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif CJK JP', serif; }
 .stage-result:lang(zh-Hans) { font-family: SimSun, 'Songti SC', 'Noto Serif CJK SC', serif; }
 .stage-result:lang(zh-Hant) { font-family: PMingLiU, 'Songti TC', 'Noto Serif CJK TC', serif; }
+
+.opening-dialog {
+  width: 100%; max-width: none; height: 100%; max-height: none;
+  margin: 0; padding: 26px; border: 0;
+  background: radial-gradient(ellipse at 50% 40%,#432b69,transparent 52%),#100a1c;
+  color: var(--inverse); overflow: auto;
+}
+.opening-dialog::backdrop { background: #100a1c; }
+.opening-dialog[open] { display: grid; place-items: safe center; }
+body:has(.opening-dialog[open]) { overflow: hidden; }
+.opening-content { max-width: 740px; text-align: center; }
+.opening-art { position: relative; isolation: isolate; width: min(390px,82vw); height: 165px; margin-inline: auto; display: grid; place-items: center; }
+.opening-art img { position: relative; z-index: 1; border-radius: 24px; box-shadow: 0 20px 65px #100722b0; }
+.opening-glyph { position: absolute; inset: auto; color: #d8b6ff; font-size: clamp(3rem,12vw,6rem); line-height: 1; font-weight: 760; pointer-events: none; opacity: 0; }
+.glyph-ko { --x: -105px; --y: 16px; --turn: -12deg; }
+.glyph-ja { --x: 0px; --y: -67px; --turn: 10deg; }
+.glyph-zh { --x: 105px; --y: 17px; --turn: 13deg; }
+.opening-content h2 { margin-top: 4px; font-size: clamp(3.8rem,11vw,8rem); line-height: .95; letter-spacing: -.075em; font-weight: 790; }
+.opening-content p { margin-top: 16px; color: var(--accent); font: 400 clamp(2rem,6vw,3.5rem)/1 Allura,"Segoe Script",cursive; }
+.opening-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.opening-enter { color: var(--ink); background: #2b1b40; border: 1px solid #6e528e; }
+.opening-enter:hover { background: #41295e; }
+.opening-replay { background: none; border: 0; padding: 0; }
+.opening-replay:hover { text-decoration: underline; }
+@media(prefers-reduced-motion:no-preference) {
+  .opening-dialog[open] .opening-glyph { animation: gather .95s cubic-bezier(.22,.75,.28,1) both; }
+  .opening-dialog[open] .opening-art img { animation: logo-arrive .52s .28s cubic-bezier(.22,.75,.28,1) both; }
+}
+@keyframes gather {
+  0% { opacity: 0; transform: translate(var(--x),var(--y)) rotate(var(--turn)) scale(.83); }
+  34% { opacity: .8; transform: translate(var(--x),var(--y)) rotate(var(--turn)); }
+  100% { opacity: 0; transform: translate(0,0) scale(.35); }
+}
+@keyframes logo-arrive {
+  from { opacity: 0; transform: scale(.68); filter: blur(5px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}

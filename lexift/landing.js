@@ -56,3 +56,25 @@ modes.addEventListener('click', event => {
 replay.addEventListener('click', () => showExample(selection));
 reducedMotion.addEventListener('change', stopMotion);
 showExample(selection);
+
+
+const opening = document.querySelector('.opening-dialog');
+const enter = opening.querySelector('.opening-enter');
+const openingReplay = document.querySelector('.opening-replay');
+const introSeen = 'lexift-opening-115';
+
+function openIntro() {
+  if (!opening.open) opening.showModal();
+}
+
+enter.addEventListener('click', () => opening.close());
+opening.addEventListener('close', () => {
+  try { sessionStorage.setItem(introSeen, 'seen'); } catch {}
+});
+openingReplay.hidden = false;
+openingReplay.addEventListener('click', openIntro);
+if (!location.hash) {
+  let seen = false;
+  try { seen = sessionStorage.getItem(introSeen) === 'seen'; } catch {}
+  if (!seen) openIntro();
+}

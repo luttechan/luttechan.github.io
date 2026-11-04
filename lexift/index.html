@@ -12,10 +12,26 @@
   <link rel="canonical" href="https://luttechan.github.io/lexift/">
   <link rel="icon" href="assets/lexift-icon.svg?v=2" type="image/svg+xml">
   <link rel="stylesheet" href="system.css?v=114">
-  <link rel="stylesheet" href="landing.css?v=114">
-  <script src="landing.js?v=113" defer></script>
+  <link rel="stylesheet" href="landing.css?v=115">
+  <script src="landing.js?v=115" defer></script>
 </head>
 <body>
+  <dialog class="opening-dialog" aria-labelledby="opening-title">
+    <div class="opening-content">
+      <div class="opening-art" aria-hidden="true">
+        <span class="opening-glyph glyph-ko" lang="ko">한</span>
+        <span class="opening-glyph glyph-ja" lang="ja">あ</span>
+        <span class="opening-glyph glyph-zh" lang="zh-Hant">語</span>
+        <img src="assets/lexift-icon.svg?v=2" width="104" height="104" alt="">
+      </div>
+      <h2 id="opening-title">Lexift</h2>
+      <p lang="en">Shift the Way You Learn.</p>
+      <div class="opening-actions">
+        <button type="button" class="button opening-enter">Lexift 만나보기 <span aria-hidden="true">↘</span></button>
+        <a class="button primary" href="https://github.com/luttechan/Lexift/releases/download/v1.1.0/Lexift-1.1.0-Setup-x64.exe">Windows 다운로드 <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </dialog>
   <a class="skip" href="#main">본문 바로가기</a>
   <header class="mast wrap">
     <a class="brand" href="./"><img src="assets/lexift-icon.svg?v=2" alt="" width="28" height="28">Lexift</a>
@@ -165,6 +181,7 @@
   </main>
   <footer class="wrap foot">
     <span>© 2026 Lutté</span>
+    <button class="opening-replay" type="button" hidden>인트로 다시 보기 ↻</button>
     <a href="../calix/">Calix ↗</a>
     <a href="https://github.com/luttechan/Lexift/releases/tag/v1.1.0">릴리즈 ↗</a>
     <a href="https://github.com/luttechan/Lexift">GitHub ↗</a>
