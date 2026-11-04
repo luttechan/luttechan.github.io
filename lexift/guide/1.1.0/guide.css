@@ -2,9 +2,9 @@
 .language-picker { display: flex; flex-wrap: wrap; gap: 4px; font-size: .8rem; }
 .language-picker a { padding: 6px 9px; border-radius: 4px; color: var(--muted); }
 .language-picker a[aria-current],.language-picker a:hover { color: var(--ink); background: var(--field); }
-.guide-cover { padding-block: clamp(35px,6vw,80px); color: var(--inverse); background: radial-gradient(ellipse at 74% 20%, #392354, transparent 69%), var(--night); border-block: 1px solid var(--line); }
+.guide-cover { padding-block: clamp(35px,6vw,80px); color: var(--inverse); background: var(--night); border-block: 1px solid var(--line); }
 .guide-cover p { color: var(--accent); }
-.guide-cover h1 { margin-top: 12px; font-size: clamp(2.6rem,7vw,6.4rem); line-height: 1.05; letter-spacing: -.07em; }
+.guide-cover h1 { margin-top: 12px; font-size: clamp(2.5rem,5vw,4rem); line-height: 1.05; letter-spacing: -.045em; }
 .guide-layout { display: grid; grid-template-columns: minmax(195px,.34fr) minmax(0,1fr); gap: clamp(25px,7vw,95px); padding-top: 42px; }
 .guide-side { align-self: start; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 4px; }
 .contents { border-top: 2px solid var(--ink); }
@@ -22,7 +22,7 @@
 .chapter:first-child { border-top: 2px solid var(--ink); }
 .chapter-heading { display: flex; align-items: baseline; gap: 14px; }
 .chapter-heading .index-label { color: var(--link); }
-.chapter h2 { font-size: clamp(1.5rem,3vw,2.55rem); line-height: 1.15; letter-spacing: -.055em; }
+.chapter h2 { font-size: clamp(1.5rem,3vw,2.55rem); line-height: 1.15; letter-spacing: -.035em; }
 .chapter-body { display: flow-root; padding-left: 30px; }
 .chapter-body > p,.chapter-body > div,.chapter-body > a { margin-top: 14px; }
 .chapter-body > p { max-width: 66ch; }

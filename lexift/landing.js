@@ -61,7 +61,7 @@ showExample(selection);
 const opening = document.querySelector('.opening-dialog');
 const enter = opening.querySelector('.opening-enter');
 const openingReplay = document.querySelector('.opening-replay');
-const introSeen = 'lexift-opening-115';
+const introSeen = 'lexift-opening-116';
 
 function openIntro() {
   if (!opening.open) opening.showModal();
