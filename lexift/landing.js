@@ -5,10 +5,11 @@ const counter = stage.querySelector('.stage-index');
 const key = stage.querySelector('.stage-key');
 const modes = stage.querySelector('.demo-modes');
 const replay = stage.querySelector('.stage-replay');
-const examples = [...document.querySelectorAll('[data-demo-key]')];
+const examples = [...document.querySelector('#conversion-examples').content.querySelectorAll('[data-demo-key]')];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let selection = 0;
-let reveal;
+const flow = stage.querySelector('.signal-flow');
+let playback = [];
 
 function showExample(index) {
   const example = examples[index];
@@ -22,13 +23,28 @@ function showExample(index) {
   for (const button of modes.querySelectorAll('button')) {
     button.setAttribute('aria-pressed', String(Number(button.dataset.demo) === index));
   }
-  reveal?.cancel();
-  if (!reducedMotion.matches) {
-    reveal = result.animate([
-      { opacity: 0, transform: 'translateY(14px)', clipPath: 'inset(0 0 100% 0)' },
+  stopMotion();
+  if (reducedMotion.matches) return;
+  playback = [
+    source.animate([
+      { transform: 'translateY(5px)', opacity: .65 },
+      { transform: 'translateY(0)', opacity: 1 },
+    ], { duration: 200, easing: 'ease-out' }),
+    flow.animate([
+      { strokeDashoffset: 1, opacity: 0 },
+      { strokeDashoffset: .6, opacity: 1, offset: .22 },
+      { strokeDashoffset: 0, opacity: 1 },
+    ], { delay: 120, duration: 290, easing: 'ease-in-out', fill: 'backwards' }),
+    result.animate([
+      { opacity: 0, transform: 'translateY(11px)', clipPath: 'inset(0 0 100% 0)' },
       { opacity: 1, transform: 'translateY(0)', clipPath: 'inset(0 0 0 0)' },
-    ], { duration: 420, easing: 'cubic-bezier(.22,.75,.28,1)' });
-  }
+    ], { delay: 275, duration: 420, easing: 'cubic-bezier(.22,.75,.28,1)', fill: 'backwards' }),
+  ];
+}
+
+function stopMotion() {
+  for (const animation of playback) animation.cancel();
+  playback = [];
 }
 
 modes.hidden = false;
@@ -38,5 +54,5 @@ modes.addEventListener('click', event => {
   if (button) showExample(Number(button.dataset.demo));
 });
 replay.addEventListener('click', () => showExample(selection));
-reducedMotion.addEventListener('change', () => reveal?.cancel());
+reducedMotion.addEventListener('change', stopMotion);
 showExample(selection);
