@@ -5,8 +5,8 @@
 .opening { background: radial-gradient(ellipse at 76% 30%, #352052 0, transparent 57%), var(--night); color: var(--inverse); border-block: 1px solid var(--line); }
 .opening-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); align-items: center; gap: clamp(30px,7vw,105px); padding-block: clamp(70px,10vw,146px); }
 .pitch .index-label, .pitch h1 span { color: var(--accent); }
-.pitch h1, .section-copy h2 { line-height: 1.09; letter-spacing: -.075em; word-break: keep-all; }
-.pitch h1 { font-size: clamp(2.35rem,4.15vw,4.1rem); margin-top: 18px; }
+.pitch h1, .section-copy h2 { line-height: 1.09; letter-spacing: -.058em; word-break: keep-all; }
+.pitch h1 { font-size: clamp(2.35rem,4.5vw,4.5rem); font-weight: 780; margin-top: 18px; }
 .pitch > p:not(.index-label) { margin-top: 24px; color: var(--muted); font-size: clamp(1rem,1.7vw,1.25rem); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 26px; }
 .pitch small { display: block; margin-top: 14px; color: var(--muted); }
@@ -101,3 +101,7 @@
   .feature > span:nth-last-child(2):empty { display: none; }
   .feature > span:last-child { grid-column: 3; grid-row: 1; }
 }
+
+.stage-result:lang(ja) { font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif CJK JP', serif; }
+.stage-result:lang(zh-Hans) { font-family: SimSun, 'Songti SC', 'Noto Serif CJK SC', serif; }
+.stage-result:lang(zh-Hant) { font-family: PMingLiU, 'Songti TC', 'Noto Serif CJK TC', serif; }
