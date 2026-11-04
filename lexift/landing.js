@@ -1,78 +1,77 @@
-(() => {
-  // Every section stays visible when JavaScript or IntersectionObserver is unavailable.
-  if ('IntersectionObserver' in window) {
-    document.documentElement.classList.add('js');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
+const intro = document.querySelector('.boot');
+const output = intro.querySelector('.console-output');
+const replay = document.querySelector('#replay-intro');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const examples = [...document.querySelectorAll('[data-input]')];
+let playback;
+
+function stopIntro() {
+  playback?.abort();
+  if (intro.open) intro.close();
+}
+
+function sleep(ms, signal) {
+  return new Promise(resolve => {
+    const abort = () => {
+      clearTimeout(timer);
+      resolve();
+    };
+    const timer = setTimeout(() => {
+      signal.removeEventListener('abort', abort);
+      resolve();
+    }, ms);
+    signal.addEventListener('abort', abort, { once: true });
+  });
+}
+
+async function playIntro() {
+  if (intro.open) return;
+  const controller = new AbortController();
+  playback = controller;
+  const { signal } = controller;
+  output.replaceChildren();
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  cursor.textContent = '•';
+  output.append(cursor);
+  intro.showModal();
+
+  await sleep(430, signal);
+  for (const example of examples) {
+    if (signal.aborted) return;
+    const line = document.createElement('p');
+    const prefix = example.dataset.mode + ' > ';
+    const input = document.createTextNode(prefix);
+    line.append(input, cursor);
+    output.append(line);
+    for (const character of example.dataset.input) {
+      if (signal.aborted) return;
+      input.appendData(character);
+      if (!reducedMotion.matches) await sleep(38, signal);
+    }
+    await sleep(235, signal);
+    if (signal.aborted) return;
+    const quote = example.querySelector('blockquote');
+    input.data = prefix + quote.textContent;
+    line.lang = quote.lang;
+    line.className = 'console-result';
+    await sleep(460, signal);
   }
+  if (!signal.aborted) stopIntro();
+}
 
-  const modes = {
-    ja: ['한글 발음으로 일본어 입력', '한글 발음', '와타시', '일본어', '私', 'ja', 'A', '후보를 고르고, Space로 확정.'],
-    zh: ['한글 발음으로 중국어 입력', '한글 발음', '니하오', '중국어 간체', '你好', 'zh-Hans', 'C', '입력하던 자리에서, 중국어로.'],
-    tw: ['번체와 주음부호 입력', '한글 발음', '셰셰', '중국어 번체', '謝謝', 'zh-Hant', 'T', '번체 → 주음부호 → OFF.'],
-    switch: ['등록한 입력기로 빠르게 전환', '현재 입력기', '한국어', '선택할 입력기', '日本語', 'ja', 'Q', '방향키로 이동하고, Enter로 선택.']
-  };
-  const tabs = [...document.querySelectorAll('[data-mode]')];
-  const select = tab => {
-    const [caption, sourceLabel, source, resultLabel, result, lang, key, note] = modes[tab.dataset.mode];
-    tabs.forEach(item => {
-      item.setAttribute('aria-selected', String(item === tab));
-      item.tabIndex = item === tab ? 0 : -1;
-    });
-    const values = { 'preview-label': caption, 'source-label': sourceLabel, 'preview-source': source, 'result-label': resultLabel, 'preview-result': result, 'shortcut-key': key, 'preview-note': note };
-    Object.entries(values).forEach(([id, value]) => { document.getElementById(id).textContent = value; });
-    document.getElementById('preview-result').lang = lang;
-    document.getElementById('preview').setAttribute('aria-labelledby', tab.id);
-    document.querySelectorAll('[data-key]').forEach(item => item.classList.toggle('lit', item.dataset.key === key));
-  };
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => select(tab));
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next !== undefined) { event.preventDefault(); select(tabs[next]); tabs[next].focus(); }
-    });
-  });
-
-  const notice = document.getElementById('cpu-notice');
-  const dismiss = document.getElementById('cpu-notice-dismiss');
-  const close = document.getElementById('cpu-notice-close');
-  if (!notice || !dismiss || !close) return;
-
-  const key = 'lexift:security-1.0.5:dismissed';
-  const read = storage => {
-    try {
-      return window[storage].getItem(key) === '1';
-    } catch {
-      return false;
-    }
-  };
-  const write = storage => {
-    try {
-      window[storage].setItem(key, '1');
-    } catch {
-      // Closing still works when browser storage is unavailable.
-    }
-  };
-
-  if (read('localStorage') || read('sessionStorage')) return;
-  notice.hidden = false;
-  close.addEventListener('click', () => {
-    if (dismiss.checked) write('localStorage');
-    write('sessionStorage');
-    notice.hidden = true;
-    if (notice.contains(document.activeElement)) {
-      document.querySelector('.download')?.focus({ preventScroll: true });
-    }
-  });
-})();
+document.querySelector('#skip-intro').addEventListener('click', stopIntro);
+intro.addEventListener('cancel', event => {
+  event.preventDefault();
+  stopIntro();
+});
+replay.hidden = false;
+replay.addEventListener('click', playIntro);
+try {
+  if (!location.hash && !sessionStorage.getItem('lexift-intro-110')) {
+    sessionStorage.setItem('lexift-intro-110', 'seen');
+    if (!reducedMotion.matches) void playIntro();
+  }
+} catch {
+  if (!location.hash && !reducedMotion.matches) void playIntro();
+}

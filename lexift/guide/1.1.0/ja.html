@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Lexift 1.1.0 — 使い方</title>
+    <link rel="stylesheet" href="guide.css">
+    <link rel="stylesheet" href="../theme.css?v=shift-20261028">
+    <script src="guide.js" defer>
+    </script>
+      <link rel="icon" href="../../assets/lexift.ico">
+  <link rel="stylesheet" href="../../../playlist-nav.css?v=20261030-r2">
+</head>
+  <body class="playlist-linked-docs">
+    <header>
+      <a class="brand" href="../../">
+        <img src="assets/lexift-logo.png" alt="Lexift">
+        <span>Docs</span>
+      </a>
+      <label class="search">
+        <input type="search" placeholder="目次を検索" aria-label="目次を検索">
+        <div class="search-results" hidden>
+        </div>
+      </label>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="chapters">☰ 目次</button>
+    <a class="playlist-nav-link" href="../../../playlist.html">♫ Playlist</a></header>
+    <div class="scrim" hidden>
+    </div>
+    <aside id="chapters" class="sidebar">
+      <div class="edition">LEXIFT 1.1.0</div>
+      <nav class="chapter-nav" aria-label="目次">
+        <a href="#overview">01 &nbsp; 概要</a>
+        <a href="#install">02 &nbsp; インストール</a>
+        <a href="#switch">03 &nbsp; 入力言語の切り替え</a>
+        <a href="#japanese">04 &nbsp; 日本語入力</a>
+        <a href="#simplified">05 &nbsp; 簡体字入力</a>
+        <a href="#traditional">06 &nbsp; 繁体字と注音符号</a>
+        <a href="#tones">07 &nbsp; ピンイン声調</a>
+        <a href="#settings">08 &nbsp; 設定</a>
+        <a href="#dictionary">09 &nbsp; ユーザー辞書</a>
+        <a href="#help">10 &nbsp; 問題と対処</a>
+      </nav>
+      <nav class="languages" aria-label="Language">
+        <a href="ko.html" lang="ko">한국어</a>
+        <a href="en.html" lang="en">English</a>
+        <a href="ja.html" lang="ja" aria-current="page">日本語</a>
+        <a href="zh_CN.html" lang="zh-Hans">简体中文</a>
+        <a href="zh_TW.html" lang="zh-Hant">繁體中文</a>
+      </nav>
+    </aside>
+    <main>
+      <p class="doc-kicker">LEXIFT / USER GUIDE</p>
+      <h1>使い方</h1>
+
+      <section id="overview">
+        <h2>概要</h2>
+        <p class="lead">言語を切り替え、日本語や中国語をハングルで入力。</p>
+        <p>Windows 10/11、64ビット。</p>
+        <a class="download" href="https://github.com/luttechan/Lexift/releases/download/v1.1.0/Lexift-1.1.0-Setup-x64.exe">ダウンロード 1.1.0 ↗</a>
+        <figure><a href="assets/home-ja.png"><img src="assets/home-ja.png" alt="Lexift — 概要" width="1120" height="820" loading="lazy"></a></figure>
+      </section>
+
+      <section id="install">
+        <h2>インストール</h2>
+        <p>タスクトレイから Lexift を終了してインストーラーを実行します。Windows に入力方式を追加し、Lexift の入力言語画面で登録します。</p>
+        <figure><a href="assets/inputs-ja.png"><img src="assets/inputs-ja.png" alt="Lexift — インストール" width="1120" height="820" loading="lazy"></a></figure>
+      </section>
+
+      <section id="switch">
+        <h2>入力言語の切り替え</h2>
+        <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>Q</kbd>
+        </div>
+        <p>方向キーと Enter、または番号で選択します。</p>
+        <figure><a href="assets/selector.png"><img src="assets/selector.png" alt="Lexift — 入力言語の切り替え" width="680" height="300" loading="lazy"></a></figure>
+      </section>
+
+      <section id="japanese">
+        <h2>日本語入力</h2>
+        <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>A</kbd>
+        </div>
+        <p>日本語の読みをハングルで入力します。와타시 → 私。もう一度押すとオフ。</p>
+        <p class="note">↑↓ 移動 / Space または Enter で確定 / 1～9、0 で選択 / Esc で閉じる。</p>
+        <p>変換をオンにするとハングル入力に切り替わります。</p>
+        <figure><a href="assets/candidate.png"><img src="assets/candidate.png" alt="Lexift — 日本語入力" width="365" height="235" loading="lazy"></a></figure>
+      </section>
+
+      <section id="simplified">
+        <h2>簡体字入力</h2>
+        <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>C</kbd>
+        </div>
+        <p>中国語の読みをハングルで入力します。니하오 → 你好。もう一度押すとオフ。</p>
+        <figure><a href="assets/simplified.png"><img src="assets/simplified.png" alt="Lexift — 簡体字入力" width="365" height="235" loading="lazy"></a></figure>
+      </section>
+
+      <section id="traditional">
+        <h2>繁体字と注音符号</h2>
+        <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>T</kbd>
+        </div>
+        <p>繁体字 → 注音符号 → オフの順に切り替えます。중궈 → 中國 / 니하오 → ㄋㄧ ㄏㄠ。注音には声調を付けません。</p>
+        <figure><a href="assets/traditional.png"><img src="assets/traditional.png" alt="Lexift — 繁体字と注音符号" width="365" height="235" loading="lazy"></a></figure>
+        <figure><a href="assets/bopomofo.png"><img src="assets/bopomofo.png" alt="Lexift — 繁体字と注音符号" width="365" height="115" loading="lazy"></a></figure>
+      </section>
+
+      <section id="tones">
+        <h2>ピンイン声調</h2>
+        <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>1 / 2 / 3 / 4 / 0</kbd>
+        </div>
+        <p>ショートカット画面でピンインの声調を有効にします。英字入力で ke と入力し、Caps + 3 を押すと kě になります。</p>
+        <div class="tone-example">mā &nbsp; má &nbsp; mǎ &nbsp; mà &nbsp; ma</div>
+        <p>1～4：声調を指定 / 0：声調を削除。Num Lock の状態に関係なくテンキーも使えます。候補表示中は番号選択が優先されます。</p>
+        <figure><a href="assets/shortcuts-ja.png"><img src="assets/shortcuts-ja.png" alt="Lexift — ピンイン声調" width="1120" height="820" loading="lazy"></a></figure>
+      </section>
+
+      <section id="settings">
+        <h2>設定</h2>
+        <p>チェックで機能を有効にします。キーを変更したら「適用」で保存。同じキーは重複して登録できません。</p>
+        <p class="note">「初期設定」で設定とユーザー辞書をリセットします。</p>
+        <figure><a href="assets/settings-ja.png"><img src="assets/settings-ja.png" alt="Lexift — 設定" width="1120" height="820" loading="lazy"></a></figure>
+      </section>
+
+      <section id="dictionary">
+        <h2>ユーザー辞書</h2>
+        <p>候補にない単語を登録します。キーワード、置換テキスト、言語を入力して保存。例：스미네 / 澄音 / 韓日変換。各行右端のボタンで削除します。</p>
+        <figure><a href="assets/dictionary-ja.png"><img src="assets/dictionary-ja.png" alt="Lexift — ユーザー辞書" width="1120" height="820" loading="lazy"></a></figure>
+      </section>
+
+      <section id="help">
+        <h2>問題と対処</h2>
+
+        <h3>ショートカットが反応しない</h3>
+        <p>通知領域で Lexift が起動しているか確認します。設定で機能を有効にし、「適用」を押します。他のアプリとキーが重なる場合は変更します。</p>
+        <h3>切り替え先の言語がない</h3>
+        <p>Windows の設定で言語と入力方式をインストールし、Lexift の「入力スロット」に登録します。</p>
+        <h3>ハングルを入力しても候補が出ない</h3>
+        <p>変換をオンにし、韓国語入力のハングルモードで入力します。日本語変換には Microsoft 日本語 IME が必要です。入力方式を追加した場合は Lexift を再起動します。</p>
+        <h3>日本語変換エンジンが繰り返し停止する</h3>
+        <p>タスクトレイから Lexift を終了してインストーラーを再実行します。改善しない場合は終了コードを添えてご報告ください。</p>
+        <h3>目的の単語が候補にない</h3>
+        <p>名前や固有名詞はユーザー辞書に登録します。日本語の長音はハイフン (-) で入力できます。例：코-죠- → こうじょう。</p>
+        <h3>Caps + Q で方向キーや Esc が効かない</h3>
+        <p>タスクトレイから Lexift を終了してインストーラーを再実行します。改善しない場合は終了コードを添えてご報告ください。</p>
+        <h3>ピンインに声調が付かない</h3>
+        <p>設定でピンイン声調をオンにします。英字入力で ke と入力し、Caps + 3 を押します。候補ウィンドウを閉じ、声調を付ける音節の直後にカーソルを置きます。</p>
+        <h3>特定のアプリで入力できない</h3>
+        <p>入力欄をクリックし直し、メモ帳でも確認します。管理者として起動したアプリでは、Lexift を終了してから管理者として起動し直します。パスワードなどの保護された入力欄には対応していません。</p>
+        <p>不具合報告には、アプリ名、Windows のバージョン、再現手順を記載してください。</p>
+        <a href="https://github.com/luttechan/Lexift/issues">GitHub Issues ↗</a>
+      </section>
+      <footer>Lexift 1.1.0<br>Translation (JP) &amp; QA : 루노</footer>
+    </main>
+  </body>
+</html>
