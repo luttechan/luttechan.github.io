@@ -21,6 +21,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 .skip:focus { top: 12px; }
 .topbar { position: sticky; top: 0; z-index: 20; background: var(--glass); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border-bottom: 1px solid #80808022; }
 .nav-inner { width: min(1120px, calc(100% - 64px)); min-height: 74px; margin: auto; display: flex; align-items: center; gap: 34px; }
+.brand { display: flex; align-items: center; gap: 9px; }
+.brand-mark { display: block; flex: none; }
 .wordmark { display: block; object-fit: contain; }
 .nav-links { display: flex; gap: 30px; margin-left: auto; font-size: 12px; color: var(--muted); }
 .nav-links a:hover { color: var(--text); }
@@ -129,7 +131,8 @@ h2 { font-size: clamp(38px, 4.4vw, 64px); line-height: 1.18; font-weight: 650; l
 
 @media (max-width: 760px) {
   .nav-inner { width: calc(100% - 36px); min-height: 64px; gap: 18px; }
-  .brand img { width: 86px; height: 30px; }
+  .brand .wordmark { width: 86px; height: 30px; }
+  .brand-mark { width: 24px; height: 24px; }
   .nav-links { gap: 17px; font-size: 11px; }
   .nav-links a:last-child { display: none; }
   .nav-download { margin-left: auto; padding: 6px 12px; font-size: 10px; }
