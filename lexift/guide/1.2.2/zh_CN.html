@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Lexift 1.2.2 — 使用指南</title>
+  <link rel="icon" href="../../assets/lexift-icon.svg?v=2" type="image/svg+xml">
+  <link rel="stylesheet" href="../../system.css?v=116">
+  <link rel="stylesheet" href="guide.css?v=116">
+  <script src="guide.js?v=113" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到正文</a>
+  <header class="guide-top">
+    <div class="wrap guide-bar">
+      <a class="brand" href="../../"><img src="../../assets/lexift-icon.svg?v=2" alt="" width="26" height="26">Lexift</a>
+      <nav class="language-picker" aria-label="Language">
+        <a href="ko.html" lang="ko">한국어</a>
+        <a href="en.html" lang="en">English</a>
+        <a href="ja.html" lang="ja">日本語</a>
+        <a href="zh_CN.html" lang="zh-Hans" aria-current="page">简体中文</a>
+        <a href="zh_TW.html" lang="zh-Hant">繁體中文</a>
+      </nav>
+    </div>
+  </header>
+  <div class="guide-cover">
+    <div class="wrap">
+      <p class="index-label">LEXIFT / 1.2.2</p>
+      <h1>使用指南</h1>
+    </div>
+  </div>
+  <div class="wrap guide-layout">
+    <aside class="guide-side">
+      <details class="contents" open>
+        <summary>目录</summary>
+        <div class="guide-search" hidden>
+          <input type="search" placeholder="搜索指南" aria-label="搜索指南" aria-controls="guide-results">
+          <div id="guide-results" class="search-results" hidden></div>
+          <p class="search-empty" role="status" hidden>没有搜索结果。</p>
+        </div>
+        <nav class="chapter-nav" aria-label="目录">
+        <p class="toc-group">入门</p>
+          <a href="#overview">概述</a>
+          <a href="#install">安装</a>
+        <p class="toc-group">输入与转换</p>
+          <a href="#switch">切换输入法</a>
+          <a href="#japanese">日语输入</a>
+          <a href="#simplified">简体中文</a>
+          <a href="#traditional">繁体与注音</a>
+          <a href="#tones">拼音声调</a>
+        <p class="toc-group">设置与故障排查</p>
+          <a href="#settings">设置</a>
+          <a href="#dictionary">自定义词典</a>
+          <a href="#help">问题排查</a>
+        </nav>
+      </details>
+    </aside>
+    <main id="main">
+      <section class="chapter" id="overview">
+        <div class="chapter-heading"><span class="index-label">01</span><h2>概述</h2></div>
+        <div class="chapter-body">
+          <p class="lead">切换输入法，以韩文字母输入日语或中文。</p>
+          <p>Windows 10/11，64 位。</p>
+          <a class="download" href="https://github.com/luttechan/Lexift/releases/download/v1.2.2/Lexift-1.2.2-Setup-x64.exe">下载 1.2.2 ↗</a>
+          <figure class="figure"><a href="assets/home-zh_CN.png"><img src="assets/home-zh_CN.png" alt="Lexift — 概述" width="1120" height="820" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="install">
+        <div class="chapter-heading"><span class="index-label">02</span><h2>安装</h2></div>
+        <div class="chapter-body">
+          <p>在程序信息中检查更新。有新版本时，选择“更新并重启”。不支持应用内更新的旧版本需先下载安装程序更新一次。</p>
+          <p>从系统托盘退出 Lexift，再运行安装程序。在 Windows 添加输入法后，在 Lexift 的输入语言页面中登记。</p>
+          <figure class="figure"><a href="assets/inputs-zh_CN.png"><img src="assets/inputs-zh_CN.png" alt="Lexift — 安装" width="1120" height="820" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="switch">
+        <div class="chapter-heading"><span class="index-label">03</span><h2>切换输入法</h2></div>
+        <div class="chapter-body">
+          <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>Q</kbd>
+          </div>
+          <p>方向键选择、Enter 确认，或直接按编号。</p>
+          <figure class="figure"><a href="assets/selector.png"><img src="assets/selector.png" alt="Lexift — 切换输入法" width="680" height="300" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="japanese">
+        <div class="chapter-heading"><span class="index-label">04</span><h2>日语输入</h2></div>
+        <div class="chapter-body">
+          <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>A</kbd>
+          </div>
+          <p>用韩文字母输入日语读音：와타시 → 私。再按一次关闭。</p>
+          <p class="note">↑↓ 移动 / Space 或 Enter 确认 / 1–9、0 选择 / Esc 关闭。</p>
+          <p>开启转换时会切换到韩文输入。</p>
+          <figure class="figure"><a href="assets/candidate.png"><img src="assets/candidate.png" alt="Lexift — 日语输入" width="365" height="235" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="simplified">
+        <div class="chapter-heading"><span class="index-label">05</span><h2>简体中文</h2></div>
+        <div class="chapter-body">
+          <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>C</kbd>
+          </div>
+          <p>用韩文字母输入中文读音：니하오 → 你好。再按一次关闭。</p>
+          <figure class="figure"><a href="assets/simplified.png"><img src="assets/simplified.png" alt="Lexift — 简体中文" width="365" height="235" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="traditional">
+        <div class="chapter-heading"><span class="index-label">06</span><h2>繁体与注音</h2></div>
+        <div class="chapter-body">
+          <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>T</kbd>
+          </div>
+          <p>依次切换繁体 → 注音 → 关闭。중궈 → 中國 / 니하오 → ㄋㄧ ㄏㄠ。注音不标声调。</p>
+          <figure class="figure"><a href="assets/traditional.png"><img src="assets/traditional.png" alt="Lexift — 繁体与注音" width="365" height="235" loading="lazy"></a></figure>
+          <figure class="figure"><a href="assets/bopomofo.png"><img src="assets/bopomofo.png" alt="Lexift — 繁体与注音" width="365" height="115" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="tones">
+        <div class="chapter-heading"><span class="index-label">07</span><h2>拼音声调</h2></div>
+        <div class="chapter-body">
+          <div class="key-row">
+          <kbd>Caps Lock</kbd>
+          <span>+</span>
+          <kbd>1 / 2 / 3 / 4 / 0</kbd>
+          </div>
+          <p>在快捷键页面开启拼音声调。在英文输入状态下输入 ke，再按 Caps + 3，即可得到 kě。</p>
+          <div class="tone-example">mā &nbsp; má &nbsp; mǎ &nbsp; mà &nbsp; ma</div>
+          <p>1–4：设置声调 / 0：清除声调。数字小键盘也可使用，不受 Num Lock 影响。候选窗口打开时，数字键优先选择候选。</p>
+          <figure class="figure"><a href="assets/shortcuts-zh_CN.png"><img src="assets/shortcuts-zh_CN.png" alt="Lexift — 拼音声调" width="1120" height="820" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="settings">
+        <div class="chapter-heading"><span class="index-label">08</span><h2>设置</h2></div>
+        <div class="chapter-body">
+          <p>勾选要启用的功能。修改快捷键后点“应用”。快捷键不能重复。</p>
+          <p class="note">“默认值”会重置所有设置和自定义词典。</p>
+          <figure class="figure"><a href="assets/settings-zh_CN.png"><img src="assets/settings-zh_CN.png" alt="Lexift — 设置" width="1120" height="820" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="dictionary">
+        <div class="chapter-heading"><span class="index-label">09</span><h2>自定义词典</h2></div>
+        <div class="chapter-body">
+          <p>添加候选中没有的词。填写关键词、替换文本和语言后保存，例如：스미네 / 澄音 / 韩日转换。点每行右侧按钮删除。</p>
+          <figure class="figure"><a href="assets/dictionary-zh_CN.png"><img src="assets/dictionary-zh_CN.png" alt="Lexift — 自定义词典" width="1120" height="820" loading="lazy"></a></figure>
+        </div>
+      </section>
+      <section class="chapter" id="help">
+        <div class="chapter-heading"><span class="index-label">10</span><h2>问题排查</h2></div>
+        <div class="chapter-body">
+          <details class="answer"><summary>快捷键无反应</summary><p>检查系统托盘中是否有 Lexift。在设置中启用对应功能并点击“应用”。若与其他程序的快捷键冲突，请更换按键。</p></details>
+          <details class="answer"><summary>切换列表中没有所需语言</summary><p>在 Windows 设置中安装相应语言和输入法，再添加到 Lexift 的“输入法槽位”。</p></details>
+          <details class="answer"><summary>输入韩文后不显示候选词</summary><p>开启转换，并将韩语输入法切至韩文模式。日语转换需要 Microsoft 日语输入法。新安装输入法后，重新启动 Lexift。</p></details>
+          <details class="answer"><summary>日语转换引擎反复停止</summary><p>从系统托盘退出 Lexift，再运行安装程序。若错误仍然存在，请附上退出代码。</p></details>
+          <details class="answer"><summary>找不到所需词语</summary><p>姓名、专有名词可添加到用户词典。日语长音可用连字符 (-) 输入，例如：코-죠- → こうじょう。</p></details>
+          <details class="answer"><summary>Caps + Q 中方向键或 Esc 无效</summary><p>从系统托盘退出 Lexift，再运行安装程序。若错误仍然存在，请附上退出代码。</p></details>
+          <details class="answer"><summary>拼音无法添加声调</summary><p>在设置中启用“拼音声调”。切至英文输入，输入 ke 后按 Caps + 3。先关闭候选窗口，并将光标放在要加声调的音节后。</p></details>
+          <details class="answer"><summary>仅在某个程序中无法输入</summary><p>重新点击输入框，并在记事本中对比测试。若目标程序以管理员身份运行，先退出 Lexift，再以管理员身份重新运行。不支持密码等安全输入框。</p></details>
+          <p>反馈问题时请注明程序名称、Windows 版本及复现步骤。</p>
+          <a href="https://github.com/luttechan/Lexift/issues">GitHub Issues ↗</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="wrap guide-footer">Lexift 1.2.2 <span>Translation (JP) &amp; QA — 루노</span></footer>
+</body>
+</html>
