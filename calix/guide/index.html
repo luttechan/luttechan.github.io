@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17131a">
-  <meta name="description" content="Calix 1.6.32 설치, Canvas 동기화, 시간표, 출결, 학점 사용 방법.">
+  <meta name="description" content="Calix 1.7.0 설치, Canvas 동기화, 시간표, 출결, 학점 사용 방법.">
   <link rel="canonical" href="https://luttechan.github.io/calix/guide/">
   <link rel="icon" href="../assets/calix.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../calix.css?v=20261121">
@@ -21,7 +21,7 @@
   </header>
   <main id="main" class="wrap">
     <div class="guide-hero">
-      <p class="eyebrow">Windows 1.6.32</p>
+      <p class="eyebrow">Windows 1.7.0</p>
       <h1>사용 설명서</h1>
       <p>설치, Canvas 동기화, 일정 관리</p>
     </div>
@@ -43,7 +43,7 @@
         <section id="setup">
           <h2>설치</h2>
           <ol>
-            <li><a href="https://github.com/luttechan/Calix/releases/download/v1.6.32/Calix-1.6.32-Setup-x64.exe">Windows 설치 파일</a>을 실행합니다.</li>
+            <li><a href="https://github.com/luttechan/Calix/releases/download/v1.7.0/Calix-1.7.0-Setup-x64.exe">Windows 설치 파일</a>을 실행합니다.</li>
             <li>이전 버전이 있으면 설치 화면에서 데이터 유지, 새로 설치, 이전 버전 보관 중 하나를 선택합니다.</li>
             <li>첫 실행에서 닉네임과 테마를 지정합니다.</li>
           </ol>
@@ -62,12 +62,13 @@
           <h2>달력과 일정</h2>
           <figure class="guide-figure">
             <div class="screen">
-              <img src="../assets/calendar-1632.webp" alt="Calix 달력 화면. 1은 오른쪽 위 일정 추가, 2는 일정 종류 필터, 3은 개별 일정." width="1280" height="748" loading="lazy">
+              <img src="../assets/calendar-170.webp" alt="Calix 달력 화면. 1은 오른쪽 위 일정 추가, 2는 일정 종류 필터, 3은 개별 일정, 4는 연도와 월 선택." width="1280" height="748" loading="lazy">
               <svg viewBox="0 0 1280 748" aria-hidden="true">
                 <defs><marker id="arrow-calendar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z"/></marker></defs>
                 <path d="M1060 79l30-24" marker-end="url(#arrow-calendar)"/><circle cx="1049" cy="90" r="21"/><text x="1049" y="90">1</text>
-                <path d="M403 178l-21 12" marker-end="url(#arrow-calendar)"/><circle cx="423" cy="166" r="21"/><text x="423" y="166">2</text>
-                <path d="M760 480l-22-22" marker-end="url(#arrow-calendar)"/><circle cx="774" cy="493" r="21"/><text x="774" y="493">3</text>
+                <path d="M385 163l-54 11" marker-end="url(#arrow-calendar)"/><circle cx="405" cy="157" r="21"/><text x="405" y="157">2</text>
+                <path d="M760 476l-22-30" marker-end="url(#arrow-calendar)"/><circle cx="774" cy="493" r="21"/><text x="774" y="493">3</text>
+                <path d="M968 159l26-18" marker-end="url(#arrow-calendar)"/><circle cx="953" cy="173" r="21"/><text x="953" y="173">4</text>
               </svg>
             </div>
             <figcaption>달력, 예시 데이터</figcaption>
@@ -76,6 +77,7 @@
             <li><strong>일정 추가</strong>에서 개인 일정을 등록합니다.</li>
             <li>상단 필터에서 <strong>전체</strong>, <strong>과제</strong>, <strong>영상</strong>을 선택합니다.</li>
             <li>일정을 누르면 이름, 유형, 메모를 편집하거나 체크리스트에 추가할 수 있습니다.</li>
+            <li>달력 우측 상단의 연도 또는 월을 눌러 원하는 달로 이동합니다.</li>
           </ol>
           <div class="subsection" id="event-filters">
             <h3>과제와 영상</h3>
@@ -91,7 +93,7 @@
           <h2>체크리스트</h2>
           <ul>
             <li>개별 일정은 달력의 상세 창에서 <strong>체크리스트에 추가</strong>를 선택합니다. 여러 건은 체크리스트의 <strong>일괄 가져오기</strong>를 사용합니다.</li>
-            <li>기한, 분류, 역할, 교수, 상태, 비고는 해당 칸에서 수정합니다. 열 제목을 누르면 정렬 방향이 바뀝니다.</li>
+            <li>기한은 해당 칸의 달력에서 날짜와 시각을 선택합니다. 분류, 역할, 교수, 상태, 비고도 각 칸에서 수정합니다. 열 제목을 눌러 정렬하고, 제목 오른쪽 경계를 끌어 열 너비를 바꿉니다.</li>
             <li>직접 만든 할 일은 행 오른쪽의 삭제 아이콘으로 삭제합니다.</li>
           </ul>
         </section>
@@ -109,7 +111,7 @@
           </div>
           <div class="subsection" id="timetable-view">
             <h3>수업 열람</h3>
-            <p>열람 모드에서 수업을 누르면 과제와 영상 목록이 열립니다. 미완료, 전체, 완료로 필터링할 수 있습니다.</p>
+            <p>열람 모드에서 수업을 누르면 교수명, 시간, 강의실과 과제, 영상 목록을 확인할 수 있습니다. 미완료, 전체, 완료로 필터링할 수 있습니다.</p>
             <p id="timetable-layout">시간표가 좁으면 상단의 <strong>시간 간격</strong>을 조정합니다.</p>
           </div>
         </section>
@@ -119,10 +121,10 @@
           <p><strong>설정 → 메뉴 활성화</strong>에서 <strong>메뉴 표시</strong>와 <strong>출결 동기화</strong>를 켠 뒤 동기화합니다.</p>
           <figure class="guide-figure">
             <div class="screen">
-              <img src="./assets/attendance-1632.webp" alt="Calix 출결 현황. 1은 과목, 2는 Canvas 기준, 3은 정렬, 4는 초록색 공결 상태." width="1440" height="960" loading="lazy">
+              <img src="./assets/attendance-170.webp" alt="Calix 출결 현황. 1은 과목, 2는 Canvas 기준, 3은 정렬, 4는 초록색 공결 상태." width="1440" height="960" loading="lazy">
               <svg viewBox="0 0 1440 960" aria-hidden="true">
                 <defs><marker id="arrow-attendance" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z"/></marker></defs>
-                <path d="M1020 162 1058 215" marker-end="url(#arrow-attendance)"/><circle cx="1020" cy="162" r="22"/><text x="1020" y="162">1</text>
+                <path d="M1020 162 1085 215" marker-end="url(#arrow-attendance)"/><circle cx="1020" cy="162" r="22"/><text x="1020" y="162">1</text>
                 <path d="M1150 162 1210 215" marker-end="url(#arrow-attendance)"/><circle cx="1150" cy="162" r="22"/><text x="1150" y="162">2</text>
                 <path d="M1260 162 1328 215" marker-end="url(#arrow-attendance)"/><circle cx="1260" cy="162" r="22"/><text x="1260" y="162">3</text>
                 <path d="M1160 515 1258 502" marker-end="url(#arrow-attendance)"/><circle cx="1160" cy="515" r="22"/><text x="1160" y="515">4</text>
@@ -144,7 +146,8 @@
 
         <section id="grades">
           <h2>학점 계산과 학습</h2>
-          <p>학점 메뉴는 비밀번호 설정 후 열립니다. 학기를 선택하고 평점 기준과 과목별 성적을 입력한 뒤 <strong>전체 저장</strong>을 누릅니다. 시간표에 등록한 과목은 해당 학기에 연결됩니다.</p>
+          <p>학점 메뉴는 비밀번호 설정 후 열립니다. Canvas에서 수집한 과목이 학기에 자동으로 추가됩니다. 빠진 과목은 <strong>과목 일괄 가져오기</strong>에서 선택합니다.</p>
+          <p>과목별 학점과 성적을 입력하고 <strong>전체 저장</strong>을 누릅니다. 입력한 기록은 <strong>학기 초기화</strong> 또는 <strong>전체 초기화</strong>로 지울 수 있습니다.</p>
           <div class="subsection" id="focus">
             <h3>집중 모드와 학습 통계</h3>
             <p><strong>학습</strong>에서 주간 수강률, 제출률, 집중 시간을 확인합니다. 뽀모도로 또는 자유 집중을 시작하면 우측 하단에 타이머가 표시됩니다. 집중 문구는 타이머 카드의 설정에서 바꿀 수 있습니다.</p>
@@ -156,13 +159,13 @@
           <p><strong>설정 → 알림과 소리</strong>에서 실행 시, 동기화 후, 일반 및 긴급 마감 알림을 지정합니다. 과제와 영상은 따로 선택할 수 있습니다.</p>
           <div class="subsection" id="alarm-sounds">
             <h3>알림음</h3>
-            <p id="sync-notification"><strong>소리</strong> 탭에서 일반 마감 알람과 음량을 조정합니다. 소리를 꺼도 알림 조건에 맞으면 창이 표시됩니다.</p>
+            <p id="sync-notification"><strong>소리</strong> 탭에서 일반 마감 알람, 동기화 완료음, 음량을 조정합니다. 동기화 기본음은 Notification 1입니다. 소리를 꺼도 알림 조건에 맞으면 창이 표시됩니다.</p>
           </div>
         </section>
 
         <section id="privacy">
           <h2>비밀번호와 잠금</h2>
-          <p><strong>설정 → 비밀번호와 잠금</strong>에서 12자 이상 비밀번호를 설정합니다. 설정 후에는 실행 시 비밀번호가 필요합니다. 메인 화면은 미사용 시간으로, 시간표와 학점은 메뉴별로 잠글 수 있습니다.</p>
+          <p><strong>설정 → 비밀번호와 잠금</strong>에서 12자 이상 비밀번호를 설정합니다. 비밀번호를 설정하면 실행 시 현재 시각과 프로필이 표시된 잠금 화면이 열립니다. 메인 화면은 미사용 시간으로, 시간표와 학점은 메뉴별로 잠글 수 있습니다.</p>
           <div class="subsection" id="diary">
             <h3>일기장</h3>
             <p>일반 일기와 비밀 일기를 작성할 수 있습니다. 비밀 일기의 비밀번호를 잊으면 일기를 복구할 수 없습니다.</p>
@@ -176,8 +179,8 @@
         <section id="management">
           <h2>백업과 업데이트</h2>
           <ul>
-            <li><strong>설정</strong>에서 업데이트를 확인하거나 백업 파일을 내보내고 복원합니다.</li>
-            <li id="reset">DB를 초기화하면 저장한 자료와 로그인 정보가 삭제됩니다. 초기화 전 백업이 필요합니다.</li>
+            <li>실행할 때 새 버전을 확인합니다. <strong>설정 → 앱 관리</strong>에서도 업데이트를 확인하고 백업을 내보내거나 복원할 수 있습니다.</li>
+            <li id="reset">데이터 초기화는 저장한 자료와 로그인 정보를 삭제합니다. 잠금 화면에서 초기화할 때는 확인란에 <strong>초기화</strong>를 입력합니다.</li>
           </ul>
           <div class="subsection" id="shortcuts">
             <h3>단축키</h3>
