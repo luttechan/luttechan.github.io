@@ -40,3 +40,4 @@ kbd, code { padding: .15em .4em; background: var(--panel); border-radius: 4px; b
   .contents h2 { grid-column: 1 / -1; margin-top: 5px; }
   .contents a { padding: 6px 10px; font-size: 15px; }
 }
+.guide-figure.clock-figure { max-width: 16rem; }
