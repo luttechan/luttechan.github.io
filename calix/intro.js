@@ -4,7 +4,7 @@
   const intro = document.getElementById("calix-intro");
   if (!intro) return;
 
-  const sessionKey = "calix-intro-smart-way";
+  const sessionKey = "calix-intro-writing";
   let seen = false;
   try {
     seen = sessionStorage.getItem(sessionKey) === "seen";
