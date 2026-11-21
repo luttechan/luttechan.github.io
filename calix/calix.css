@@ -50,6 +50,29 @@ a:focus-visible, summary:focus-visible { outline: 2px solid #fff5fb; outline-off
 .hero-figure img { width: 100%; height: auto; border: 1px solid #f2dbea85; border-radius: clamp(10px, 2vw, 23px); box-shadow: 0 23px 64px #0905097a; }
 .hero-figure figcaption { margin-top: 12px; text-align: right; }
 @keyframes reveal { from { opacity: .25; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+.contest-credit {
+  display: grid;
+  grid-template-columns: minmax(12px, 1fr) minmax(0, auto) minmax(12px, 1fr);
+  align-items: center;
+  gap: clamp(10px, 2.6vw, 38px);
+  padding-block: clamp(16px, 3vw, 40px);
+  text-align: center;
+}
+.contest-credit::before, .contest-credit::after {
+  content: "";
+  block-size: 1px;
+  background: var(--line);
+}
+.contest-credit p {
+  color: var(--muted);
+  font-size: clamp(17px, 2.35vw, 32px);
+  font-weight: 640;
+  letter-spacing: -.035em;
+  line-height: 1.25;
+  word-break: keep-all;
+  text-wrap: balance;
+}
+.contest-credit strong { color: var(--pink); font-weight: 730; }
 .features { padding-block: clamp(32px, 5vw, 70px) clamp(56px, 7vw, 104px); }
 .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 23px; }
 .section-title h2, .download h2 { font-size: clamp(29px, 3.7vw, 50px); letter-spacing: -.06em; line-height: 1.15; word-break: keep-all; }
