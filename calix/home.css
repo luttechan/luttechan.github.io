@@ -123,14 +123,23 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 }
 .app-screen figcaption { margin-block-start: .6rem; }
 .contest-credit {
-  padding: 1.2rem 0;
-  border-block: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 1rem;
-  font-weight: 590;
+  display: grid;
+  gap: .4rem;
+  padding: clamp(1.35rem, 3vw, 2.45rem) 1rem;
+  border-block: 1px solid #e3cfdc;
+  background: #f6edf3;
   text-align: center;
   word-break: keep-all;
 }
+.contest-school { color: var(--accent); font-size: .94rem; font-weight: 690; }
+.contest-title {
+  font-size: clamp(1.12rem, 2.3vw, 1.75rem);
+  font-weight: 670;
+  letter-spacing: -.035em;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.contest-title strong { color: var(--accent); font-weight: 760; }
 
 .features {
   display: grid;
