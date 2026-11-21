@@ -136,16 +136,6 @@ img { display: block; max-inline-size: 100%; block-size: auto; }
   padding-block: clamp(3rem, 6vw, 5rem) clamp(2.8rem, 6vw, 5.25rem);
   background: linear-gradient(180deg, #fff7fa, #fae8f1 75%, var(--paper));
 }
-.handwriting {
-  position: absolute;
-  z-index: -1;
-  inset: -.75rem -6% auto;
-  block-size: clamp(22rem, 52vw, 48rem);
-  opacity: .42;
-  transform: rotate(-7deg);
-  pointer-events: none;
-}
-.handwriting img { inline-size: 100%; block-size: 100%; }
 .hero-copy { text-align: center; padding-inline: var(--gutter); }
 .hero h1 {
   font-size: clamp(4.6rem, 9.5vw, 8rem);
@@ -348,11 +338,14 @@ img { display: block; max-inline-size: 100%; block-size: auto; }
   .nav-links a { font-size: .86rem; }
   .nav-links a[href="#calendar"], .nav-links a[href="#themes"] { display: none; }
   .nav-links .nav-download { padding-inline: .75rem; }
-  .handwriting { inset-inline: -45%; }
   .contest-copy { max-inline-size: 15rem; }
   .learning-grid { grid-template-columns: minmax(0, 1fr); }
   .help-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .footer-fine { align-items: flex-start; }
+}
+@media (max-width: 28rem) {
+  .swatches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .swatch { gap: .35rem; padding-inline: .43rem; font-size: .78rem; }
+  .swatch i { inline-size: .62rem; block-size: .62rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
