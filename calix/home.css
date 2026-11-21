@@ -10,6 +10,12 @@
   font-weight: 500;
   font-display: swap;
 }
+@font-face {
+  font-family: "Allura Display";
+  src: url("./assets/Allura-Display.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
 
 :root {
   color-scheme: light;
@@ -88,11 +94,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   padding-block: clamp(2rem, 5vw, 4.75rem);
 }
 .hero-title {
-  font-family: var(--display);
-  font-size: clamp(4rem, 9vw, 8rem);
-  font-weight: 500;
-  letter-spacing: -.064em;
-  line-height: 1;
+  font-family: "Allura Display", "Segoe Script", cursive;
+  font-size: clamp(5rem, 10.3vw, 9rem);
+  font-weight: 400;
+  line-height: .95;
 }
 .hero-summary {
   margin-block-start: .85rem;
