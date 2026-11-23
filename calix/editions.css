@@ -110,6 +110,9 @@ button { font: inherit; }
 .feature-screen, .theme-screen { padding: 0 clamp(.7rem, 2vw, 1.35rem) clamp(.7rem, 2vw, 1.35rem); }
 .feature-screen img, .theme-screen img { inline-size: 100%; block-size: auto; border: 1px solid var(--line); border-radius: .7rem; }
 .feature-screen img { aspect-ratio: 1.6; object-fit: cover; object-position: top; }
+.theme-groups { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .75rem 1.4rem; }
+.theme-group { min-width: 0; }
+.theme-group > p { margin: 0 0 .42rem; color: var(--dim); font-size: .9rem; font-weight: 600; }
 .theme-picker { display: flex; flex-wrap: wrap; gap: .45rem; }
 .theme-picker button { cursor: pointer; inline-size: 2rem; block-size: 2rem; padding: 0; border-radius: 50%; border: 2px solid transparent; background: var(--swatch); box-shadow: inset 0 0 0 2px #101a28; }
 .theme-picker button[aria-pressed="true"] { border-color: #f1fbff; }

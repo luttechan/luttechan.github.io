@@ -6,8 +6,8 @@ for (const swatch of swatches) {
   swatch.addEventListener("click", async () => {
     const request = ++selection;
     const image = new Image();
-    const theme = swatch.dataset.theme;
-    image.src = theme === "dark" ? "../assets/aurora-home.webp" : `../assets/home-${theme}-173.webp`;
+    const file = swatch.dataset.image ?? `home-${swatch.dataset.theme}-173.webp`;
+    image.src = `../assets/${file}?v=177`;
     try {
       await image.decode();
     } catch {
