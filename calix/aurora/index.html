@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <meta name="description" content="부산외대 Canvas 과제와 영상 일정을 관리하는 Windows 앱 Calix Aurora.">
+  <meta property="og:title" content="Calix Aurora">
+  <meta property="og:image" content="https://luttechan.github.io/calix/assets/aurora-home.webp">
+  <link rel="canonical" href="https://luttechan.github.io/calix/aurora/">
+  <link rel="icon" href="../assets/calix.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../editions.css">
+  <script src="aurora.js" defer></script>
+  <title>Calix Aurora | Windows</title>
+</head>
+<body class="aurora-page">
+  <a class="skip" href="#main">본문으로</a>
+  <header class="site-header">
+    <nav class="frame masthead" aria-label="주 메뉴">
+      <a class="mark" href="../"><img src="../assets/calix.svg" width="29" height="29" alt="">Calix</a>
+      <div class="nav-links">
+        <a href="./" aria-current="page">Aurora</a>
+        <a href="../vesper/">Vesper</a>
+        <a href="../guide/">사용 설명서</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="aurora-hero" id="download" aria-labelledby="aurora-title">
+      <div class="aurora-light" aria-hidden="true"></div>
+      <div class="frame hero-content">
+        <h1 id="aurora-title">Calix <span>Aurora</span></h1>
+        <p>부산외대 Canvas 일정 관리</p>
+        <a class="button" href="https://github.com/luttechan/Calix/releases/download/v1.7.6/Calix-1.7.6-Setup-x64.exe">Windows 다운로드</a>
+        <small>Windows 10 / 11, x64</small>
+        <div class="hero-screen">
+          <img src="../assets/aurora-home.webp" width="1440" height="960" alt="Calix Aurora 홈에 표시된 오늘의 과제와 영상 일정" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <div class="frame aurora-content">
+      <aside class="contest" aria-label="공모전 출품">
+        <span class="contest-laurel" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <div><strong>부산외국어대학교</strong><span>2026 대학혁신을 위한 아이디어 공모전 출품작</span></div>
+        <span class="contest-laurel contest-laurel--right" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </aside>
+      <div class="features">
+        <section class="feature" id="calendar" aria-labelledby="calendar-title">
+          <div class="section-heading"><h2 id="calendar-title">달력</h2><a href="../guide/#event-filters">일정 필터</a></div>
+          <div class="feature-screen"><img src="../assets/calendar-173.webp" width="1440" height="842" alt="마감일과 일정 유형을 표시한 달력" loading="lazy" decoding="async"></div>
+        </section>
+        <section class="feature" id="timetable" aria-labelledby="timetable-title">
+          <div class="section-heading"><h2 id="timetable-title">시간표</h2><a href="../guide/#timetable-edit">수업 편집</a></div>
+          <div class="feature-screen"><img src="../assets/timetable.webp" width="1440" height="960" alt="강의실과 남은 과제 건수를 표시한 시간표" loading="lazy" decoding="async"></div>
+        </section>
+      </div>
+      <section class="theme-panel" id="themes" aria-labelledby="theme-title">
+        <div class="theme-header">
+          <h2 id="theme-title">테마</h2>
+          <div class="theme-picker" role="group" aria-label="테마 미리보기">
+            <button type="button" data-theme="dark" style="--swatch:#333242" aria-pressed="true" title="다크" aria-label="다크"></button>
+            <button type="button" data-theme="pink" style="--swatch:#d09bb7" aria-pressed="false" title="핑크" aria-label="핑크"></button>
+            <button type="button" data-theme="sky" style="--swatch:#9bb8db" aria-pressed="false" title="스카이블루" aria-label="스카이블루"></button>
+            <button type="button" data-theme="mint" style="--swatch:#9bcdb9" aria-pressed="false" title="민트" aria-label="민트"></button>
+            <button type="button" data-theme="purple" style="--swatch:#b7a0d4" aria-pressed="false" title="퍼플" aria-label="퍼플"></button>
+            <button type="button" data-theme="peach" style="--swatch:#deaa92" aria-pressed="false" title="피치" aria-label="피치"></button>
+            <button type="button" data-theme="amber" style="--swatch:#d7b16a" aria-pressed="false" title="앰버" aria-label="앰버"></button>
+            <button type="button" data-theme="olive" style="--swatch:#a7b580" aria-pressed="false" title="올리브" aria-label="올리브"></button>
+            <button type="button" data-theme="lavender" style="--swatch:#aaa7dc" aria-pressed="false" title="라벤더" aria-label="라벤더"></button>
+          </div>
+        </div>
+        <div class="theme-screen"><img id="theme-preview" src="../assets/aurora-home.webp" width="1440" height="960" alt="Calix 다크 테마" loading="lazy" decoding="async"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="frame site-footer" id="bug-report">
+    <span>© 2026 Lutté Laurent</span>
+    <nav aria-label="보조 메뉴">
+      <a href="../guide/">사용 설명서</a>
+      <a href="https://github.com/luttechan/Calix/releases">업데이트 내역</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_MACToW3j1CXTej0ujlthPVBdn106eAdC3CATeXxXWrQ6Qg/viewform">버그 제보</a>
+    </nav>
+  </footer>
+</body>
+</html>
