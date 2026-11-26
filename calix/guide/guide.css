@@ -1,3 +1,19 @@
+:root {
+  --page: #0b111e;
+  --panel: #131d2d;
+  --ink: #edf4fd;
+  --muted: #b0c2d4;
+  --line: #2c3e52;
+  --pink: #a4edda;
+  --pink-ink: #102c27;
+}
+.guide-page {
+  background: radial-gradient(ellipse 790px 380px at 22% 40px, #19413f 0%, transparent 78%),
+    radial-gradient(ellipse 810px 400px at 87% 125px, #242f53 0%, transparent 79%),
+    var(--page);
+}
+.guide-page a:focus-visible { outline-color: var(--pink); }
+.guide-page .site-header { background: #0b111ea6; }
 .guide-hero { padding-block: clamp(55px, 8vw, 104px) 43px; border-bottom: 1px solid var(--line); }
 .guide-hero h1 { font-size: clamp(49px, 7vw, 89px); }
 .guide-hero > p:last-child { color: var(--muted); font-size: clamp(17px, 2vw, 21px); margin-top: 16px; }
@@ -23,12 +39,22 @@
 .chapters .guide-figure { max-width: 900px; margin-block: 22px 0; }
 .screen { position: relative; isolation: isolate; }
 .screen img { width: 100%; height: auto; border-radius: 12px; outline: 1px solid var(--line); }
-.screen svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; color: #86274f; }
+.screen svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; color: #176457; }
 .screen svg > path { fill: none; stroke: currentColor; stroke-width: 5; }
 .screen svg marker { fill: currentColor; }
 .screen svg circle { fill: currentColor; stroke: white; stroke-width: 2; }
 .screen svg text { fill: white; text-anchor: middle; dominant-baseline: central; font-weight: 750; font-size: 23px; }
 .guide-figure figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.guide-theme-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.guide-theme-options figure {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.guide-theme-options img { width: 100%; height: auto; }
+.guide-theme-options figcaption { padding: 9px 11px; font-size: 14px; font-weight: 620; }
 .shortcut-list { display: grid; gap: 5px; max-width: 420px; }
 .shortcut-list div { display: flex; justify-content: space-between; gap: 14px; padding-block: 7px; border-bottom: 1px solid var(--line); }
 .shortcut-list dd { margin: 0; white-space: nowrap; }
